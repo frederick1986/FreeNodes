@@ -54,15 +54,18 @@ REGION_KEYWORDS: dict[str, list[str]] = {
 class Merger:
     """Merge site output files into cross-site aggregated files."""
 
-    def __init__(self, nodes_dir: str = "nodes"):
+    def __init__(self, nodes_dir: str = "nodes", output_dir: str | None = None):
         self.nodes_dir = Path(nodes_dir)
+        self.output_dir = Path(output_dir) if output_dir is not None else self.nodes_dir
 
     def run(self) -> MergeResult:
         """Run all three merge stages and return results."""
+        self.output_dir.mkdir(parents=True, exist_ok=True)
         result = MergeResult()
         result.merged_txt = self._merge_txt(result)
         result.merged_yaml = self._merge_yaml(result)
         result.provider_yaml = self._build_provider(result)
+        self._sync_compatibility(result)
         self._print_summary(result)
         return result
 
@@ -97,7 +100,7 @@ class Merger:
             return ""
 
         txt = "\n".join(all_lines)
-        out = self.nodes_dir / "merged.txt"
+        out = self.output_dir / "merged.txt"
         out.write_text(txt, encoding="utf-8")
         print(f"  [merger] merged.txt: {result.txt_sources} files, {result.total_nodes} nodes")
         return str(out)
@@ -136,7 +139,7 @@ class Merger:
         output = self._base_clash_config(proxies=proxies, groups=groups)
 
         yaml_text = yaml.safe_dump(output, allow_unicode=True, default_flow_style=False)
-        out = self.nodes_dir / "merged.yaml"
+        out = self.output_dir / "merged.yaml"
         out.write_text(self._header(f"Merged {result.yaml_sources} yaml files") + yaml_text, encoding="utf-8")
         print(f"  [merger] merged.yaml: {result.yaml_sources} files, {len(proxies)} proxies")
         return str(out)
@@ -152,13 +155,15 @@ class Merger:
         if not yaml_files:
             return ""
 
+        # Provider paths resolve from Mihomo HomeDir, not this YAML file.
+        # Keep references into the source directory when merged outputs move.
         # proxy-providers
         providers: dict[str, dict] = {}
         for f in yaml_files:
             name = f.stem
             providers[name] = {
                 "type": "file",
-                "path": f"./nodes/{f.name}",
+                "path": f.as_posix() if f.is_absolute() else f"./{f.as_posix()}",
                 "health-check": {
                     "enable": True,
                     "url": "http://www.gstatic.com/generate_204",
@@ -221,10 +226,20 @@ class Merger:
         output = self._base_clash_config(groups=groups, providers=providers)
 
         yaml_text = yaml.safe_dump(output, allow_unicode=True, default_flow_style=False)
-        out = self.nodes_dir / "provider.yaml"
+        out = self.output_dir / "provider.yaml"
         out.write_text(self._header("Proxy-provider based config (for Clash Meta / Mihomo)") + yaml_text, encoding="utf-8")
         print(f"  [merger] provider.yaml: {len(yaml_files)} providers, {len(regions)} regions")
         return str(out)
+
+    def _sync_compatibility(self, result: MergeResult):
+        """Keep existing subscriptions in nodes_dir byte-identical to outputs."""
+        if self.output_dir.resolve() == self.nodes_dir.resolve():
+            return
+        self.nodes_dir.mkdir(parents=True, exist_ok=True)
+        for generated in (result.merged_txt, result.merged_yaml, result.provider_yaml):
+            if generated:
+                path = Path(generated)
+                (self.nodes_dir / path.name).write_bytes(path.read_bytes())
 
     # ── Helpers ──
 

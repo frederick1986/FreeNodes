@@ -163,3 +163,76 @@ class TestMergeResult:
         assert r.merged_txt == ""
         assert r.total_nodes == 0
         assert r.region_count == {}
+
+class TestPublishedOutputs:
+    @staticmethod
+    def _sources(tmp_path):
+        nodes = tmp_path / "nodes"
+        nodes.mkdir()
+        (nodes / "site1.txt").write_text(
+            "vless://418048af-a293-4b99-9b0c-98ca3580dd24@example.com:443",
+            encoding="utf-8",
+        )
+        (nodes / "site1.yaml").write_text(
+            "proxies:\n  - {name: HK 01, server: example.com, port: 443, type: vmess, "
+            "uuid: 418048af-a293-4b99-9b0c-98ca3580dd24}\n",
+            encoding="utf-8",
+        )
+        return nodes
+
+    def test_outputs_and_compatibility_are_identical(self, tmp_path, monkeypatch):
+        self._sources(tmp_path)
+        monkeypatch.chdir(tmp_path)
+        before = {p.name: p.read_bytes() for p in Path("nodes").iterdir()}
+        result = Merger(nodes_dir="nodes", output_dir="outputs").run()
+        for generated in (result.merged_txt, result.merged_yaml, result.provider_yaml):
+            path = Path(generated)
+            assert path.parent == Path("outputs")
+            assert path.stat().st_size > 0
+            assert path.read_bytes() == (Path("nodes") / path.name).read_bytes()
+        for name, content in before.items():
+            assert (Path("nodes") / name).read_bytes() == content
+        provider = yaml.safe_load(Path(result.provider_yaml).read_text(encoding="utf-8"))
+        assert provider["proxy-providers"]["site1"]["path"] == "./nodes/site1.yaml"
+        # Relative provider paths resolve from Mihomo HomeDir (the repository).
+        for item in provider["proxy-providers"].values():
+            assert (tmp_path / item["path"]).is_file()
+
+    def test_later_runs_refresh_both_locations(self, tmp_path, monkeypatch):
+        self._sources(tmp_path)
+        monkeypatch.chdir(tmp_path)
+        merger = Merger(nodes_dir="nodes", output_dir="outputs")
+        merger.run()
+        old = Path("outputs/merged.txt").read_bytes()
+        Path("nodes/site1.txt").write_text(
+            "vless://518048af-a293-4b99-9b0c-98ca3580dd24@next.example:8443",
+            encoding="utf-8",
+        )
+        # Previous aggregate files in nodes are never inputs to the next merge.
+        result = merger.run()
+        assert result.total_nodes == 1
+        assert Path("outputs/merged.txt").read_bytes() != old
+        assert "next.example" in Path("outputs/merged.txt").read_text(encoding="utf-8")
+        for name in ("merged.txt", "merged.yaml", "provider.yaml"):
+            assert Path("outputs", name).read_bytes() == Path("nodes", name).read_bytes()
+
+    def test_custom_source_and_nested_output_paths(self, tmp_path, monkeypatch):
+        nodes = self._sources(tmp_path)
+        nodes.rename(tmp_path / "source-data")
+        monkeypatch.chdir(tmp_path)
+        result = Merger(nodes_dir="source-data", output_dir="public/final").run()
+        assert Path(result.merged_txt) == Path("public/final/merged.txt")
+        provider = yaml.safe_load(Path(result.provider_yaml).read_text(encoding="utf-8"))
+        assert provider["proxy-providers"]["site1"]["path"] == "./source-data/site1.yaml"
+        for name in ("merged.txt", "merged.yaml", "provider.yaml"):
+            assert Path("public/final", name).read_bytes() == Path("source-data", name).read_bytes()
+
+    def test_reproducible_from_same_inputs(self, tmp_path, monkeypatch):
+        self._sources(tmp_path)
+        monkeypatch.chdir(tmp_path)
+        # Freeze only the timestamp header; node processing remains real.
+        monkeypatch.setattr(Merger, "_header", staticmethod(lambda desc: "# fixed header\n"))
+        Merger(nodes_dir="nodes", output_dir="outputs").run()
+        before = {p.name: p.read_bytes() for p in Path("outputs").iterdir()}
+        Merger(nodes_dir="nodes", output_dir="outputs").run()
+        assert before == {p.name: p.read_bytes() for p in Path("outputs").iterdir()}

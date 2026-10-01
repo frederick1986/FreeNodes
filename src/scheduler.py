@@ -66,7 +66,8 @@ class Scheduler:
         # Run merger + readme after all sites processed
         if not target:
             out_dir = self.config.output.get("dir", "nodes")
-            merger = Merger(nodes_dir=out_dir)
+            merged_dir = self.config.output.get("merged_dir", "outputs")
+            merger = Merger(nodes_dir=out_dir, output_dir=merged_dir)
             merge_result = merger.run()
             print(f"\n  merge: {merge_result.total_nodes} total nodes across "
                   f"{merge_result.txt_sources} txt + {merge_result.yaml_sources} yaml sources")

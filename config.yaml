@@ -48,6 +48,7 @@ llm:
       openrouter: 70
 output:
   dir: nodes
+  merged_dir: outputs
 sites:
 - description: blog site, article titles contain dates (month-day format), each article
     provides subscription links directly

@@ -1,4 +1,4 @@
-"""README.md generator — builds subscription table from config + nodes/."""
+"""README.md generator — builds subscription table from config + source and merged output directories."""
 from datetime import datetime
 from pathlib import Path
 
@@ -13,6 +13,8 @@ BRANCH = "feat/ai-crawler-v2"
 def build_readme(config: Config) -> str:
     """Generate README.md with subscription table from config site list."""
     today = datetime.now().strftime("%Y-%m-%d")
+    nodes_dir = Path(config.output.get("dir", "nodes"))
+    merged_dir = Path(config.output.get("merged_dir", "outputs"))
 
     lines = [
         "# FreeNodes",
@@ -26,6 +28,9 @@ def build_readme(config: Config) -> str:
         "",
         "## v2ray / Clash 订阅列表",
         "",
+        "合并订阅位于 `outputs/`，原 `nodes/` 地址继续同步更新。",
+        "`provider.yaml` 使用本地来源文件；使用时请将仓库根目录设为 Mihomo 工作目录（`-d`），并保留 `nodes/`。",
+        "",
         "| 爬虫目标 | 订阅链接 | 镜像加速订阅链接 | 更新日期 |",
         "| --- | --- | --- | --- |",
     ]
@@ -37,20 +42,20 @@ def build_readme(config: Config) -> str:
         node_count = site.node_count
 
         # Build file links — one row per available file
-        txt_path = Path(f"nodes/{name}.txt")
-        yaml_path = Path(f"nodes/{name}.yaml")
+        txt_path = nodes_dir / f"{name}.txt"
+        yaml_path = nodes_dir / f"{name}.yaml"
 
         links = []
         mirror_links = []
 
         if txt_path.exists():
-            raw = f"{GITHUB_BASE}/{BRANCH}/nodes/{name}.txt"
-            mirror = f"{GITHUB_PROXY}/{BRANCH}/nodes/{name}.txt"
+            raw = f"{GITHUB_BASE}/{BRANCH}/{nodes_dir.as_posix()}/{name}.txt"
+            mirror = f"{GITHUB_PROXY}/{BRANCH}/{nodes_dir.as_posix()}/{name}.txt"
             links.append(f"[{name}.txt]({raw})")
             mirror_links.append(f"[镜像]({mirror})")
         if yaml_path.exists():
-            raw = f"{GITHUB_BASE}/{BRANCH}/nodes/{name}.yaml"
-            mirror = f"{GITHUB_PROXY}/{BRANCH}/nodes/{name}.yaml"
+            raw = f"{GITHUB_BASE}/{BRANCH}/{nodes_dir.as_posix()}/{name}.yaml"
+            mirror = f"{GITHUB_PROXY}/{BRANCH}/{nodes_dir.as_posix()}/{name}.yaml"
             links.append(f"[{name}.yaml]({raw})")
             mirror_links.append(f"[镜像]({mirror})")
 
@@ -66,10 +71,10 @@ def build_readme(config: Config) -> str:
     merged_links = []
     merged_mirror = []
     for fname in ("merged.txt", "merged.yaml", "provider.yaml"):
-        fpath = Path(f"nodes/{fname}")
+        fpath = merged_dir / fname
         if fpath.exists():
-            raw = f"{GITHUB_BASE}/{BRANCH}/nodes/{fname}"
-            mirror = f"{GITHUB_PROXY}/{BRANCH}/nodes/{fname}"
+            raw = f"{GITHUB_BASE}/{BRANCH}/{merged_dir.as_posix()}/{fname}"
+            mirror = f"{GITHUB_PROXY}/{BRANCH}/{merged_dir.as_posix()}/{fname}"
             merged_links.append(f"[{fname}]({raw})")
             merged_mirror.append(f"[镜像]({mirror})")
     if merged_links:

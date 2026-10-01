@@ -37,14 +37,14 @@ jobs:
       # Validation is report-only: legacy node files are not cleaned or deleted.
       - name: Validate node artifacts
         continue-on-error: true
-        run: validate-nodes nodes
+        run: validate-nodes nodes outputs
 
       - name: Commit output
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Force-add files that may be gitignored (nodes/) or newly generated
-          git add --force nodes/*.txt nodes/*.yaml config.yaml README.md
+          # Force-add files that may be gitignored (nodes/) or merged (outputs/) or newly generated
+          git add --force nodes/*.txt nodes/*.yaml outputs/*.txt outputs/*.yaml config.yaml README.md
           # Only commit if there are changes
           if git diff --cached --quiet; then
             echo "No changes to commit"

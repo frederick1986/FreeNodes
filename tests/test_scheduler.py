@@ -12,6 +12,11 @@ from src.site_processor import SiteResult
 from src.config import Config, SiteConfig, CrawlConfig, LLMConfig
 
 
+@pytest.fixture(autouse=True)
+def isolated_cwd(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+
+
 @pytest.fixture
 def three_site_config():
     return Config(
@@ -160,3 +165,19 @@ class TestRun:
         scheduler = Scheduler(three_site_config)
         await scheduler.run()
         assert max_concurrent <= 2, f"concurrency exceeded limit: {max_concurrent}"
+
+    async def test_publishes_outputs_after_processing(self, three_site_config, monkeypatch):
+        from pathlib import Path
+        from src.pipeline import save
+
+        async def fake_run(self):
+            uri = f"vless://418048af-a293-4b99-9b0c-98ca3580dd24@{self.site.name}.test:443"
+            save(self.site.name, ".txt", uri, self.output_dir)
+            return SiteResult(site_name=self.site.name, articles_processed=1, txt_count=1)
+
+        monkeypatch.setattr("src.scheduler.SiteProcessor.run", fake_run)
+        await Scheduler(three_site_config).run()
+        assert Path("outputs/merged.txt").is_file()
+        assert Path("outputs/merged.txt").read_bytes() == Path("nodes/merged.txt").read_bytes()
+        assert len(Path("outputs/merged.txt").read_text(encoding="utf-8").splitlines()) == 3
+        assert "/outputs/merged.txt" in Path("README.md").read_text(encoding="utf-8")

@@ -5,8 +5,8 @@ from pathlib import Path
 from src.config import Config
 
 
-GITHUB_BASE = "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads"
-GITHUB_PROXY = "https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/refs/heads"
+GITHUB_BASE = "https://raw.githubusercontent.com/frederick1986/FreeNodes/refs/heads"
+GITHUB_PROXY = "https://gh-proxy.com/raw.githubusercontent.com/frederick1986/FreeNodes/refs/heads"
 BRANCH = "feat/ai-crawler-v2"
 
 
@@ -17,7 +17,7 @@ def build_readme(config: Config) -> str:
     lines = [
         "# FreeNodes",
         "",
-        "v2ray、Clash 免费节点爬虫（AI 版），每日 12:00 自动运行。",
+        "v2ray、Clash 免费节点爬虫（AI 版），每日 UTC 04:00（北京时间 12:00）自动运行。",
         "",
         "## 免责声明",
         "",
@@ -74,7 +74,7 @@ def build_readme(config: Config) -> str:
             merged_mirror.append(f"[镜像]({mirror})")
     if merged_links:
         lines.append(
-            f"| [merged](https://github.com/Barabama/FreeNodes/tree/{BRANCH}) "
+            f"| [merged](https://github.com/frederick1986/FreeNodes/tree/{BRANCH}) "
             f"| {'<br>'.join(merged_links)} "
             f"| {'<br>'.join(merged_mirror)} "
             f"| {today} |"

@@ -1,6 +1,6 @@
 # FreeNodes
 
-v2ray、Clash 免费节点爬虫（AI 版），每日 UTC 04:17（北京时间 12:17）自动运行。
+v2ray、Clash 免费节点爬虫（AI 版）。本 fork 保留用于同步上游，仍可手动运行；每日 UTC 04:17（北京时间 12:17）的抓取、检查和发布已迁移至独立私有项目 freeNodes_check，公开订阅位于 [outputs/freenodes](https://github.com/frederick1986/outputs/tree/main/freenodes)。
 
 ## 免责声明
 

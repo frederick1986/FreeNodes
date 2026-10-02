@@ -1,8 +1,7 @@
 name: AI Crawl Daily Update
 
 on:
-  schedule:
-    - cron: "17 4 * * *"  # daily at 12:17 Beijing time (UTC 04:17)
+  # Daily crawl/check/publication now runs in freeNodes_check at UTC 04:17.
   workflow_dispatch:       # manual trigger
 
 jobs:

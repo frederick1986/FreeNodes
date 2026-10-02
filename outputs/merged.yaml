@@ -1,5 +1,5 @@
 # FreeNodeSpider - Merged 10 yaml files
-# Generated: 2026-10-01 13:52:29
+# Generated: 2026-10-02 05:58:43
 # Docs: https://github.com/FreeNodeSpider
 # ------------------------------------------------------------
 allow-lan: true
@@ -17,29 +17,9 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- alterId: 64
-  cipher: auto
-  name: 🇨🇳_CN_中国
-  port: 50002
-  server: 112.132.215.108
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- alterId: 0
-  cipher: auto
-  name: 🇩🇪_DE_德国
-  port: 110
-  server: 31.77.8.97
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: d2d8601b-c14b-42c6-b8ea-33889bce152a
 - alterId: 2
   cipher: auto
-  name: 🇭🇰_HK_中国香港
+  name: 🇭🇰_HK_中国香港->🇯🇵_JP_日本
   port: 30806
   server: v6.hdacd.com
   skip-cert-verify: true
@@ -47,15 +27,42 @@ proxies:
   type: vmess
   udp: true
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-- name: 🇨🇳_CN_中国->🇺🇸_US_美国
-  port: 52683
-  server: jp.sofast.live
+- cipher: aes-256-cfb
+  name: 🇪🇸_ES_西班牙
+  password: GA9KzeEgvfxNrgmM
+  port: 9019
+  server: 5.188.181.201
+  skip-cert-verify: true
+  type: ss
+  udp: true
+- name: 🇩🇪_DE_德国
+  network: ws
+  port: 8080
+  server: 0cf703b86ea5a239.RaVEnlO.iR
   skip-cert-verify: true
   tls: false
   type: vless
   udp: true
-  uuid: 399b6b23-cc40-4831-a494-61948e2df133
-- name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
+  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
+- name: 🇵🇱_PL_波兰
+  password: UX82473651
+  port: 443
+  server: cheerful-swan.rooster465.autos
+  skip-cert-verify: true
+  sni: cheerful-swan.rooster465.autos
+  type: trojan
+  udp: true
+- alterId: 2
+  cipher: auto
+  name: 🇭🇰_HK_中国香港
+  port: 30807
+  server: v10.hdacd.com
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国
   port: 58011
   server: us22.sofast.live
   skip-cert-verify: true
@@ -79,48 +86,6 @@ proxies:
     headers:
       Host: guanwang.awsno.com
     path: /hls/cctv5phd.m3u8
-- name: 🇩🇪_DE_德国_1
-  password: UX82473651
-  port: 443
-  server: alive-flea.rooster465.autos
-  skip-cert-verify: true
-  type: trojan
-  udp: true
-- cipher: aes-256-cfb
-  name: 🇪🇸_ES_西班牙
-  password: GA9KzeEgvfxNrgmM
-  port: 9019
-  server: 5.188.181.201
-  skip-cert-verify: true
-  type: ss
-  udp: true
-- name: 🇩🇪_DE_德国_2
-  network: ws
-  port: 8080
-  server: 0cf703b86ea5a239.RaVEnlO.iR
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 50d10e6c-37e1-4512-b35a-2d4e0adfd079
-- name: 🇵🇱_PL_波兰
-  password: UX82473651
-  port: 443
-  server: cheerful-swan.rooster465.autos
-  skip-cert-verify: true
-  sni: cheerful-swan.rooster465.autos
-  type: trojan
-  udp: true
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰_HK_中国香港_2
-  port: 30807
-  server: v10.hdacd.com
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
 - alterId: 2
   cipher: auto
   name: 🇭🇰_HK_中国香港->🇺🇸_US_美国
@@ -131,6 +96,14 @@ proxies:
   type: vmess
   udp: true
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
+  port: 52683
+  server: jp.sofast.live
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 399b6b23-cc40-4831-a494-61948e2df133
 - alterId: 2
   cipher: auto
   name: 🇭🇰_HK_中国香港->🇫🇷_FR_法国
@@ -141,6 +114,26 @@ proxies:
   type: vmess
   udp: true
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+- alterId: 0
+  cipher: auto
+  name: 🇩🇪_DE_德国_1
+  port: 110
+  server: 31.77.8.97
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: d2d8601b-c14b-42c6-b8ea-33889bce152a
+- alterId: 64
+  cipher: auto
+  name: 🇨🇳_CN_中国
+  port: 50002
+  server: 112.132.215.108
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - alterId: 0
   cipher: auto
   name: 🇨🇳_CN_中国->🇰🇷_KR_韩国
@@ -181,7 +174,7 @@ proxies:
   udp: true
   uuid: 9195e0f1-f466-4e69-838f-a95519b5d45e
 - flow: xtls-rprx-vision
-  name: 🇩🇪_DE_德国_3
+  name: 🇩🇪_DE_德国_2
   port: 443
   server: de-918a1965.sishka.network
   skip-cert-verify: true
@@ -260,6 +253,49 @@ proxies:
     headers:
       Host: hk.152568.xyz
     path: /cdn/packages/runtime-core.tar.gz
+- client-fingerprint: firefox
+  name: 🇩🇪_DE_德国_3
+  network: ws
+  port: 8444
+  server: germany.tofreedom.ru
+  servername: germany.tofreedom.ru
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 9cb2520c-148b-4bbc-a149-9d5a43ff0db3
+  ws-opts:
+    headers:
+      Host: germany.tofreedom.ru
+    path: /c7f5317cd04691bc
+- name: 🇳🇱_NL_荷兰_2
+  port: 59228
+  server: netherlands.diginoisb.ir
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 26c88828-53a0-40b9-84fc-e9a50fde5e7d
+- alterId: 1
+  cipher: auto
+  name: 🇯🇵_JP_日本
+  port: 28786
+  server: ou44bxs-g04.jp06-jz-vm0.entry.fr0528.art
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: d687b024-a5cf-3433-8d06-1c99e2e28821
+- alterId: 1
+  cipher: auto
+  name: 🇯🇵_JP_日本_1
+  port: 21584
+  server: hhz4qxs-g04.jp03-j7-vm0.entry.fr0528.art
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: d687b024-a5cf-3433-8d06-1c99e2e28821
 - name: 🇺🇸美國丨yoyapai.com
   network: ws
   port: 8880
@@ -15229,7 +15265,7 @@ proxies:
       Host: f.yoptybla.ru
     path: /
 - client-fingerprint: chrome
-  name: 🇯🇵_JP_日本
+  name: 🇯🇵_JP_日本_2
   network: ws
   port: 443
   server: 35.72.179.15
@@ -15274,7 +15310,7 @@ proxies:
       Host: 6-M17.kuwAit.kDns.Fr
     path: /fVs1qv0xm8dxmnwuaPwokxgY4XlP
 - client-fingerprint: chrome
-  name: 🇭🇰_HK_中国香港_3
+  name: 🇭🇰_HK_中国香港_2
   network: ws
   port: 443
   server: 103.101.0.73
@@ -34352,7 +34388,7 @@ proxies:
   xudp: true
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
-  name: 8元老牌专线机场：cczzuu.top
+  name: 🇭🇰 香港_MOIH09
   network: tcp
   port: 13779
   reality-opts:
@@ -34367,7 +34403,7 @@ proxies:
   udp: true
   uuid: 928e6cce-8ced-4243-9a48-a6642edd09b0
 - client-fingerprint: chrome
-  name: 🇭🇰 香港_XGR6BO
+  name: 🇭🇰 香港_5HWLCA
   network: tcp
   port: 13779
   reality-opts:
@@ -34384,7 +34420,7 @@ proxies:
 - client-fingerprint: chrome
   grpc-opts:
     grpc-service-name: api.v2.PushService
-  name: 🇧🇬 保加利亚_T210CG
+  name: 🇧🇬 保加利亚_6HU8B8
   network: grpc
   port: 443
   reality-opts:
@@ -34398,226 +34434,6 @@ proxies:
   type: vless
   udp: true
   uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇩🇪 德国_77LFIF
-  network: tcp
-  port: 443
-  reality-opts:
-    public-key: SibLV5WBGdljTiUCmKx77KhHQfErCwjDMD_ZLoha3js
-    short-id: a1b2c3d4e5f67890
-  server: 31.76.101.39
-  servername: dzen.ru
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: d72f05b0-b182-4783-a6f2-21cecc7d841a
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇩🇪 德国_DFK239
-  network: tcp
-  port: 443
-  reality-opts:
-    public-key: Nb9IwEEhUHEbHSc6e5uYTjxDgN4ZExhDckM3OgYhj2o
-    short-id: 52ccb3687fe0b7ec
-  server: 85.193.94.217
-  servername: api8.eaglors.com
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 3aaa8219-d891-4ab4-b953-f681392cc598
-- client-fingerprint: chrome
-  name: 🇳🇱 荷兰_5G0CKQ
-  network: tcp
-  port: 443
-  reality-opts:
-    public-key: RYfzci_ctBzEbBah0jwygnWrGer9_LQfjOgmh9VizQE
-    short-id: f9
-  server: 94.237.40.197
-  servername: bazitory.com
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: e96896d8-72d1-496f-8d28-b3fa0de4a562
-- client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: stats.v2.PushService
-  name: 🇲🇩 摩尔多瓦_W0G4C7
-  network: grpc
-  port: 443
-  reality-opts:
-    public-key: q38CddDj2g-XNDc0uW1m6S6b8iGY_Bne2RwX7C_FYCQ
-    short-id: 9a72d40f1ff882b3
-  server: 89.35.14.32
-  servername: md3.univesalsrv.com
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇩🇪 德国_M96M2D
-  network: tcp
-  port: 443
-  reality-opts:
-    public-key: YTO2eLUPj_pLJijheLCvxg3d53o5BTNSjRSpJKCAa3k
-    short-id: f54ec8b46381247f
-  server: 13.143.186.29
-  servername: st2.megabitvpn.org
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 3e2591b2-4739-4c59-b540-344f0b6505ac
-- client-fingerprint: chrome
-  name: 🇪🇪 爱沙尼亚_MW9QP4
-  network: xhttp
-  port: 25395
-  reality-opts:
-    public-key: NPeupAuDrIhrFEXxPXUnsmuT0zSOkSQByegy5DPJQhU
-    short-id: b4
-  server: 143.246.41.6
-  servername: amd.com
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 900e2cca-4798-47f6-b972-5288a77c8093
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇺🇦 乌克兰_B1SRD6
-  network: tcp
-  port: 443
-  reality-opts:
-    public-key: xweejWIAaEbPuyKn4UpPWe9eEaEx2y-DgGCS1Egtlk4
-    short-id: 1b2a3f
-  server: 179.254.108.151
-  servername: update.web-assets.cfd
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 55b237c9-02d3-44a8-a61c-033455da3fa8
-- client-fingerprint: firefox
-  name: 🇨🇭 瑞士_2MK4C9
-  network: tcp
-  port: 2053
-  reality-opts:
-    public-key: A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0
-    short-id: ad86e2d52ff40ebd
-  server: 208.69.78.217
-  servername: www.apple.com
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: c0dd6d59-1573-43af-8b70-1470b2632a6d
-- client-fingerprint: random
-  flow: xtls-rprx-vision
-  name: 🇨🇭 瑞士_U03VTC
-  network: tcp
-  port: 443
-  reality-opts:
-    public-key: 4tKriwpqhfu1WW98K2UZjNGyRv6AZXP15pNEMnbFimw
-    short-id: 7c4a91e2d8f630b5
-  server: 179.255.191.131
-  servername: mail.univer.live
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: ce230b9c-0531-40da-bc3f-f27a8e059db1
-- client-fingerprint: firefox
-  grpc-opts:
-    grpc-service-name: media.v1.ObjectService
-  name: 🇷🇸 塞尔维亚_IH9NFZ
-  network: grpc
-  port: 443
-  reality-opts:
-    public-key: tL16MVY08r-7YDXb1_gxuBBWInpSFp97ZLJ_ax3R2iE
-    short-id: 1469af2040b7c323
-  server: 150.40.126.19
-  servername: rs2.univesalsrv.com
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
-- client-fingerprint: firefox
-  flow: xtls-rprx-vision
-  name: 🇭🇰 香港_L8TA4Q
-  network: tcp
-  port: 443
-  reality-opts:
-    public-key: 4ubYp4HaBJgn1qXwfo0hiejncurXCckII-O_FMDXTgI
-    short-id: 3b74d85e
-  server: 139.28.168.201
-  servername: china.letsconnectpoint.com
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: a368752a-32fc-42f3-980a-6b049218b23f
-- client-fingerprint: chrome
-  name: 🇳🇱 荷兰_Y9K6JB
-  network: tcp
-  port: 443
-  reality-opts:
-    public-key: Vh3wggwHjUKIEPw37Fjzm6x4hbuTb8WcyfRHwdljYk8
-    short-id: e2504a30a3ffaf61
-  server: 195.63.163.21
-  servername: cnl2.subsconnect.com
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 55d21d88-ff56-4210-a44c-4c00d853ad63
-- client-fingerprint: chrome
-  name: 🇰🇿 哈萨克斯坦_CAV7VU
-  network: tcp
-  port: 38065
-  reality-opts:
-    public-key: dSSDPTK6AHfAdRAXD9i4rzqcNIY65RxlF25UyCKdiyo
-    short-id: fa
-  server: 83.222.23.81
-  servername: yahoo.com
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 4b9063e0-3288-44e9-9aac-80fbfce323a0
-- client-fingerprint: random
-  name: 🇳🇱 荷兰_33NSPK
-  network: tcp
-  port: 2053
-  reality-opts:
-    public-key: Zotx4F9CI6_q9yeKCKIHDjwzCv_Aq7WSo7N0Zc1A6Sc
-    short-id: 3c99c85cbb6b3b44
-  server: 51.15.16.68
-  servername: www.apple.com
-  skip-cert-verify: false
-  tfo: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 7d0fd363-16d2-43ce-9d6d-ed2c15d2cb7c
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
   name: 🇮🇳 印度_DHFIR7
@@ -34702,6 +34518,23 @@ proxies:
   udp: true
   uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
 - client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: media.v1.ObjectService
+  name: 🇷🇸 塞尔维亚_JIA2L9
+  network: grpc
+  port: 443
+  reality-opts:
+    public-key: tL16MVY08r-7YDXb1_gxuBBWInpSFp97ZLJ_ax3R2iE
+    short-id: 1469af2040b7c323
+  server: 150.40.126.19
+  servername: rs2.univesalsrv.com
+  skip-cert-verify: false
+  tfo: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+- client-fingerprint: chrome
   flow: xtls-rprx-vision
   name: 🇨🇭 瑞士_6MD7MV
   network: tcp
@@ -34728,6 +34561,38 @@ proxies:
     short-id: 35d05b666e2c6cdf
   server: rs3.univesalsrv.com
   servername: rs3.univesalsrv.com
+  skip-cert-verify: false
+  tfo: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+- client-fingerprint: chrome
+  name: 🇰🇿 哈萨克斯坦_0ILNZV
+  network: tcp
+  port: 38065
+  reality-opts:
+    public-key: dSSDPTK6AHfAdRAXD9i4rzqcNIY65RxlF25UyCKdiyo
+    short-id: fa
+  server: 83.222.23.81
+  servername: yahoo.com
+  skip-cert-verify: false
+  tfo: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4b9063e0-3288-44e9-9aac-80fbfce323a0
+- client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: stats.v2.PushService
+  name: 🇲🇩 摩尔多瓦_A9Q3KC
+  network: grpc
+  port: 443
+  reality-opts:
+    public-key: q38CddDj2g-XNDc0uW1m6S6b8iGY_Bne2RwX7C_FYCQ
+    short-id: 9a72d40f1ff882b3
+  server: 89.35.14.32
+  servername: md3.univesalsrv.com
   skip-cert-verify: false
   tfo: false
   tls: true
@@ -34878,6 +34743,37 @@ proxies:
   type: vless
   udp: true
   uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: 🇫🇮 芬兰_B64TVL
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: sUDdxp5g9lRHlVEH6meJWXah84yhLDyVI7KuZhW-MTQ
+    short-id: b4e44a
+  server: 103.245.229.32
+  servername: adminvps.ru
+  skip-cert-verify: false
+  tfo: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: 8bbe5178-a991-4a56-871c-553e2f8e9e70
+- client-fingerprint: chrome
+  name: 🇳🇱 荷兰_A8TU1P
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: ClG6fvriBTK8donGsTlKusJ0dwRCgVDDTAGzAtZzJDY
+    short-id: 82c2b7d5e70ff000
+  server: 162.35.242.252
+  servername: nl.aksay.pro
+  skip-cert-verify: false
+  tfo: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: e3e9805a-6c8b-4edd-8ee8-621df79806eb
 - cipher: aes-256-cfb
   name: tg频道:@freenodedaily
   password: amazonskr05
@@ -35064,6 +34960,742 @@ proxies:
     headers:
       Host: bJ1Aa2ZyJxYamYuK.v.3dns.vip
     path: /ws-vmess
+- alterId: 0
+  cipher: auto
+  name: 美国(yudou789.top 玉豆分享)
+  port: 50011
+  server: 36.133.79.17
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: e37149b8-63df-4b4e-bd17-d7fc0b3009db
+- alterId: 0
+  cipher: auto
+  name: 美国(yudou789.top 玉豆分享)_14
+  port: 50011
+  server: 157.148.7.136
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: e37149b8-63df-4b4e-bd17-d7fc0b3009db
+- alterId: 0
+  cipher: auto
+  name: 美国(yudou789.top 玉豆分享)_17
+  port: 50011
+  server: 157.148.7.55
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: f114d414-1535-4321-856c-29979eeed799
+- alterId: 0
+  cipher: auto
+  name: 美国(yudou789.top 玉豆分享)_20
+  port: 50014
+  server: 36.133.78.37
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: abcb006d-739f-4cec-b13f-12c10d334d92
+- alterId: 0
+  cipher: auto
+  name: 美国(yudou789.top 玉豆分享)_23
+  port: 50017
+  server: 36.133.78.37
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: e37149b8-63df-4b4e-bd17-d7fc0b3009db
+- alterId: 0
+  cipher: auto
+  name: 美国(yudou789.top 玉豆分享)_25
+  port: 50015
+  server: 36.133.78.37
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 148e82ae-5014-4a1a-a783-dd63fa9cdc9d
+- name: 韩国(yudou789.top 玉豆分享)
+  password: 13f0acfa-38c1-4e82-a758-583aa31740df
+  port: 60005
+  server: svip.skycon808.com
+  skip-cert-verify: true
+  sni: xjp18.2uuzhe.com
+  tls: true
+  type: anytls
+  udp: true
+- client-fingerprint: chrome
+  name: 美国(yudou789.top 玉豆分享)_45
+  port: 443
+  reality-opts:
+    public-key: i_UbRo65YEpOFuKkNVa0GEMl7xLDx9B1nmeyeNWyJQs
+    short-id: 68e97022627fa882
+  server: 35.233.43.229
+  servername: www.cloudflare.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: e3fb56fe-bdbc-4f0e-b1ed-de2f7c85f254
+- client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: edge.v2.FeedService
+  name: 美国(yudou789.top 玉豆分享)_47
+  network: grpc
+  port: 443
+  reality-opts:
+    public-key: gHDoSWGWMVZKWNKONWHw-Cpl0-bdI6GaKusgJIQ-vWQ
+    short-id: 35d05b666e2c6cdf
+  server: 150.40.126.21
+  servername: rs3.univesalsrv.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+- alterId: 0
+  cipher: auto
+  name: 美国(yudou789.top 玉豆分享)_54
+  port: 50012
+  server: 36.133.78.37
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9e63ca55-1ff9-453b-ae80-75947b8596d3
+- client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: grpc
+  name: 德国(yudou789.top 玉豆分享)
+  network: grpc
+  port: 443
+  reality-opts:
+    public-key: gyVm1AWjn649wcSvTmyS12lsmecJFjm51BjUSWOjkxM
+    short-id: 35debf0dc757d053
+  server: 31.56.189.147
+  servername: max.ru
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 99e5e9a0-1c6b-4cb0-805d-a810fd47eb15
+- client-fingerprint: chrome
+  name: 荷兰(yudou789.top 玉豆分享)_2
+  network: ws
+  port: 8443
+  server: 188.164.248.123
+  servername: vp21.cc.cd
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 7b102311-43fd-4e8f-877e-8090623c101d
+  ws-opts:
+    headers:
+      Host: vp21.cc.cd
+    path: /
+- client-fingerprint: chrome
+  name: 美国(yudou789.top 玉豆分享)_57
+  network: ws
+  port: 443
+  server: 172.67.71.252
+  servername: spjd.cbc.qzz.io
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 37665857-8b6e-4daa-8231-3e2927221558
+  ws-opts:
+    headers:
+      Host: spjd.cbc.qzz.io
+    path: /proxyip=ProxyIP.US.CMLiussss.net
+- alterId: 0
+  cipher: auto
+  name: 美国(yudou789.top 玉豆分享)_60
+  port: 50018
+  server: 36.133.78.37
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: abcb006d-739f-4cec-b13f-12c10d334d92
+- client-fingerprint: chrome
+  name: 德国(yudou789.top 玉豆分享)_1
+  port: 443
+  reality-opts:
+    public-key: XRYeVrK7q9baNj66NmBBIX_sllPJtxOBTjrxTaQMQ2U
+    short-id: 7394ea3cc2106697
+  server: 34.159.243.3
+  servername: www.cloudflare.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 753fa5ef-0b08-4fd3-b688-173ff594b758
+- name: 美国(yudou789.top 玉豆分享)_62
+  password: mitivpn
+  port: 443
+  server: 199.232.78.101
+  skip-cert-verify: true
+  sni: ssl.fastly.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: mitivpn---de--s---mitivpn-11.global.ssl.fastly.net
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSus---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+- name: 美国(yudou789.top 玉豆分享)_63
+  password: mitivpn
+  port: 443
+  server: 199.232.78.170
+  skip-cert-verify: true
+  sni: ssl.fastly.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: mitivpn---de--s---mitivpn-11.global.ssl.fastly.net
+    path: /
+- client-fingerprint: chrome
+  name: 美国(yudou789.top 玉豆分享)_64
+  network: ws
+  port: 443
+  server: 143.198.97.84
+  servername: spjd.cbc.qzz.io
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 37665857-8b6e-4daa-8231-3e2927221558
+  ws-opts:
+    headers:
+      Host: spjd.cbc.qzz.io
+    path: /proxyip=ProxyIP.US.CMLiussss.net
+- cipher: aes-128-gcm
+  name: 香港(yudou789.top 玉豆分享)_1
+  password: bKgENdAl@8Zx3lAc-HK-BD-20260622
+  port: 24443
+  server: 154.86.30.45
+  skip-cert-verify: true
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  name: 美国(yudou789.top 玉豆分享)_68
+  port: 443
+  reality-opts:
+    public-key: -Tb9KKp870JxcZ3Ka7Rx5ez3QBYryX4e8_jdyNZu2wE
+    short-id: ed278463058a6dc9
+  server: 34.154.18.129
+  servername: www.cloudflare.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: fffe33b6-5735-4a71-adb1-1c154def9024
+- name: 美国(yudou789.top 玉豆分享)_69
+  password: mitivpn
+  port: 443
+  server: 167.82.76.7
+  skip-cert-verify: true
+  sni: ssl.fastly.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: mitivpn---us--s---mitivpn-11.global.ssl.fastly.net
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+- alterId: 0
+  cipher: auto
+  name: 美国(yudou789.top 玉豆分享)_74
+  network: ws
+  port: 18901
+  server: 2001:bc8:32d7:1a9::2
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 3a966d20-7b9d-48cc-ba2c-8d38161b6d3a
+  ws-opts:
+    path: /github.com/Alvin9999-newpac/fanqiang
+- client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: home.v1.ApiService
+  name: 美国(yudou789.top 玉豆分享)_75
+  network: grpc
+  port: 443
+  reality-opts:
+    public-key: XBfCioniAKXgKYBUVnvBXu80AIaIa4SpAB3w8qeF7Gk
+    short-id: 1be1bd931c98c84a
+  server: 45.9.156.27
+  servername: bg3.univesalsrv.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+- client-fingerprint: chrome
+  name: 美国(yudou789.top 玉豆分享)_77
+  port: 443
+  reality-opts:
+    public-key: tT6wEOh8ASizQYNRb51QdDlxAksSJbEaBnbQBajc6SQ
+    short-id: c5426331173ca15c
+  server: 34.18.161.225
+  servername: www.cloudflare.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: b6f775c2-70fd-4247-8d12-82cac46fdd50
+- client-fingerprint: chrome
+  name: 美国(yudou789.top 玉豆分享)_80
+  port: 443
+  reality-opts:
+    public-key: -bjPqNKxxGTKCmH6dwsdGRTUzuatAowBWxyOPW4BiVQ
+    short-id: 7e7623474d41f032
+  server: 34.118.43.106
+  servername: www.cloudflare.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 16e310b7-659e-45ee-a4b0-10e0289b8621
+- client-fingerprint: chrome
+  name: 美国(yudou789.top 玉豆分享)_82
+  network: ws
+  port: 443
+  server: 141.98.233.6
+  servername: spjd.cbc.qzz.io
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 37665857-8b6e-4daa-8231-3e2927221558
+  ws-opts:
+    headers:
+      Host: spjd.cbc.qzz.io
+    path: /proxyip=ProxyIP.US.CMLiussss.net
+- alterId: 0
+  cipher: auto
+  name: 美国(yudou789.top 玉豆分享)_83
+  network: ws
+  port: 443
+  server: yg1.ygkkk.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: b2ba4a73-3123-479e-aa96-5973a9ecd0c0
+  ws-opts:
+    headers:
+      Host: jmp1.907737.xyz
+    path: /b2ba4a73-3123-479e-aa96-5973a9ecd0c0-vm
+- name: 俄罗斯(yudou789.top 玉豆分享)_5
+  password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+  port: 22443
+  server: 91.240.86.70
+  skip-cert-verify: true
+  sni: hy.quattro-tech.ru
+  type: hysteria2
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 美国(yudou789.top 玉豆分享)_85
+  port: 50013
+  server: 36.133.78.37
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 23b5790c-4e96-49fa-95fc-9079ce9cf43c
+- client-fingerprint: chrome
+  name: 美国(yudou789.top 玉豆分享)_88
+  network: ws
+  port: 8443
+  server: 46.36.220.183
+  servername: spjd.cbc.qzz.io
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 37665857-8b6e-4daa-8231-3e2927221558
+  ws-opts:
+    headers:
+      Host: spjd.cbc.qzz.io
+    path: /proxyip=ProxyIP.US.CMLiussss.net
+- client-fingerprint: chrome
+  name: 新加坡(yudou789.top 玉豆分享)
+  port: 443
+  reality-opts:
+    public-key: hJCcmOf_ECJ3GUfHUjsgfcFKcgGb22H7cz_m_FvcVm4
+    short-id: eb97ce837da2f6ad
+  server: 136.85.2.50
+  servername: www.cloudflare.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 5567cac6-2a32-4318-83cd-7df3a9eebbd7
+- client-fingerprint: chrome
+  name: 西班牙(yudou789.top 玉豆分享)
+  port: 443
+  reality-opts:
+    public-key: iI9J--AfPKCXbVle3Om-WMn_g-3bO3SsVzUCNtwUkU0
+    short-id: fe85cb6a5c84e64c
+  server: 34.175.19.8
+  servername: www.cloudflare.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 0b4b1548-c7ca-45a5-9096-6c3cc4b1c43b
+- client-fingerprint: unsafe
+  name: 香港(yudou789.top 玉豆分享)_2
+  network: ws
+  port: 8443
+  server: 129.211.188.184
+  servername: jp3.yohototo.top
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  ws-opts:
+    headers:
+      Host: jp3.yohototo.top
+    path: /tyxyws
+- client-fingerprint: chrome
+  name: 英国(yudou789.top 玉豆分享)_1
+  network: ws
+  port: 80
+  server: 194.36.55.146
+  servername: 194.36.55.146
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 964e6322-afad-4594-8508-86d634d732e6
+  ws-opts:
+    headers:
+      Host: blacklegends.umc-mansur13.workers.dev
+    path: /
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 🇲🇩_MD_摩尔多瓦_2
+  port: 443
+  reality-opts:
+    public-key: zT7a-PnmIWP4c-G1EDUT3KZ7URi1kc8EppAWPr3h5lk
+    short-id: afeed89ae23b36ed
+  server: rezerv23.yunus.guru
+  servername: rezerv23.yunus.guru
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a5ea9247-79f3-4655-aece-3fb51e1e669e
+- alterId: 0
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - sjskendn.dingtalk.com
+    path:
+    - /x
+  name: 🇭🇰_HK_中国香港_3
+  network: http
+  port: 800
+  server: 47.86.167.194
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: f2c67cae-c09d-4739-947d-f5302d87a3c0
+- alterId: 0
+  cipher: auto
+  name: 🇭🇰_HK_中国香港_1
+  network: ws
+  port: 443
+  server: drbkg16egf3fzlm3.v.3dns.vip
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  ws-opts:
+    path: /ws-vmess
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 🇩🇪_DE_德国_5
+  port: 8443
+  reality-opts:
+    public-key: m8NlVgma3zCfxdXIzMreVvi_O4c2-lZqPh_9UHOsM1I
+    short-id: 99defbf4759b
+  server: 94.156.122.215
+  servername: www.github.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ce5b6383-60f2-4aa3-9099-eacb6b01cf2b
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 🇫🇷_FR_法国
+  port: 43248
+  reality-opts:
+    public-key: LPLKpq5_G1WB6BqJhrCKQp1oQly3akbsVjvYPZrbGgg
+    short-id: 3355cf9734b0150e
+  server: 15.237.177.139
+  servername: yahoo.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: f9d8ca28-2fff-45de-9b25-3bf29186018e
+- client-fingerprint: chrome
+  name: 🇩🇪_DE_德国_1_3
+  network: ws
+  port: 443
+  server: 45.80.111.7
+  servername: 2--ldej--MiTiVPN---MiTiVPN-o.KingNetwork.ir
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 926bc4cd-709e-4e90-8aa7-78db75fbe86b
+  ws-opts:
+    headers:
+      Host: De2-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/de2---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+- name: 🇭🇰_HK_中国香港->🇩🇪_DE_德国
+  password: ba07a8af-5544-48ac-ab62-3b6c00a44fa6
+  port: 20041
+  server: hkdcrtc-e.catcat321.com
+  skip-cert-verify: true
+  sni: de.catxstar.com
+  tls: true
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 🇭🇰_HK_中国香港_2
+  network: ws
+  port: 443
+  server: m01c7b2z26dtqgee.v.3dns.vip
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  ws-opts:
+    path: /ws-vmess
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 🇨🇭_CH_瑞士
+  port: 443
+  reality-opts:
+    public-key: q_lfutznS1iTS7bGphTIGMYVeht-8clcf_IfzIf4mBQ
+    short-id: 10a5c8e2f4b7d936
+  server: 199.68.196.79
+  servername: ch.tunnelx.space
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 🇨🇭_CH_瑞士_1
+  port: 443
+  reality-opts:
+    public-key: q_lfutznS1iTS7bGphTIGMYVeht-8clcf_IfzIf4mBQ
+    short-id: 10a5c8e2f4b7d936
+  server: ch.tunnelx.space
+  servername: ch.tunnelx.space
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 🇩🇪_DE_德国_2_2
+  port: 8443
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  server: 159.195.139.217
+  servername: sellflow.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 48267e65-8bf0-4046-923f-4ee967009344
+- client-fingerprint: firefox
+  name: 🇪🇸_ES_西班牙_4
+  port: 2053
+  reality-opts:
+    public-key: aFsY-EZjSNTomlAFShKwQIQMJ5pHiZQXXJpWvcz8WkQ
+    short-id: 0858af97f4e7324d
+  server: 46.28.71.104
+  servername: web.abubibabu.ru
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 504d0b6e-400d-45ec-b2d0-1c79006ebc16
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 🇺🇸_US_美国_1_3
+  port: 443
+  reality-opts:
+    public-key: 6INA8Jxa9oQT3XrW4uXd0leo2upMdUn8s_XbSP0qB3I
+    short-id: f0a9d2b1c7e4f648
+  server: 217.177.75.7
+  servername: usa.tunnelx.space
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2
+- client-fingerprint: chrome
+  name: 🇩🇪_DE_德国_3_2
+  network: ws
+  port: 443
+  server: 31.76.11.46.cdn-one.org
+  servername: 31.76.11.46.cdn-one.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
+  ws-opts:
+    headers:
+      Host: 31.76.11.46.cdn-one.org
+    path: /52872/BNzG4FvIAr
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 🇩🇪_DE_德国_4
+  port: 443
+  reality-opts:
+    public-key: kaw2U8L2ZTcgo56qUBONfylYJpHprI_CgZfv1I4q2Sc
+    short-id: b512d49930874a31
+  server: 185.126.67.76
+  servername: cdn-de-4.ai-apiroute.cc
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: b6f3b292-00c9-430e-bc4c-b1294bd895c0
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 🇳🇱_NL_荷兰_3
+  port: 2444
+  reality-opts:
+    public-key: JsSTmS0VKNaHF-_QKYS-_utnS-LJuPOBrWcMbVE2RDA
+    short-id: 0809f782a29a2030
+  server: 31.76.79.118
+  servername: www.cloudflare.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: fc1ee51e-72ec-4af0-ab0f-540c9e22427b
+- client-fingerprint: qq
+  grpc-opts:
+    grpc-service-name: auragrpc
+  name: 🇵🇱_PL_波兰_3
+  network: grpc
+  port: 25224
+  reality-opts:
+    public-key: uXV7VKWM7wlzSVCp1MxVMQHJJ3GvjJmVCMPqw_vIZUs
+    short-id: e7c3f9a2b6d4f8e1
+  server: pl01.auragg.org
+  servername: cloudflare.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 6af3672b-8994-4cf1-aa15-23ce6574ebf0
+- client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: auragrpc
+  name: 🇩🇪_DE_德国_5
+  network: grpc
+  port: 25310
+  reality-opts:
+    public-key: 3Ow1WhWHN1nUEkOR4kThVpzEuvlcB5ZrqoBcHtJGyiY
+    short-id: a3d8f1e9b2c7d4e6
+  server: 159.195.201.235
+  servername: cloudflare.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 6af3672b-8994-4cf1-aa15-23ce6574ebf0
+- name: 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国_1
+  port: 443
+  server: ddc-akn.astralweb.tech
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 04b9e828-43ed-4faf-8952-41069ec08355
+- alterId: 2
+  cipher: auto
+  name: 🇨🇳_CN_中国->🇭🇰_HK_中国香港_2
+  port: 30809
+  server: v9.hdacd.com
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 🇲🇰_MK_MK
+  port: 443
+  reality-opts:
+    public-key: PCF6GYA_TCdb28mM6zsxJ38MAtmnSrJJEygkXvrt1AE
+    short-id: b512d49930874a31
+  server: 195.144.24.84
+  servername: cdn-mk.ai-apiroute.cc
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: b6f3b292-00c9-430e-bc4c-b1294bd895c0
+- client-fingerprint: chrome
+  name: 🇵🇱_PL_波兰_1
+  network: ws
+  port: 443
+  server: 31.76.251.127.cdn-one.org
+  servername: 31.76.251.127.cdn-one.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
+  ws-opts:
+    headers:
+      Host: 31.76.251.127.cdn-one.org
+    path: /10336/2GCOqG7bvA
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 🇲🇩_MD_摩尔多瓦_1
+  port: 443
+  reality-opts:
+    public-key: zT7a-PnmIWP4c-G1EDUT3KZ7URi1kc8EppAWPr3h5lk
+    short-id: afeed89ae23b36ed
+  server: 176.123.2.210
+  servername: rezerv23.yunus.guru
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: a5ea9247-79f3-4655-aece-3fb51e1e669e
 - alterId: 0
   cipher: auto
   name: 分享日记_1
@@ -46742,820 +47374,114 @@ proxies:
     headers:
       Host: twilight-poetry-2bfe.218-699.workers.dev
     path: /pyip=Telegram-WangCai2🇨🇳
-- ip-version: dual
-  name: 未知_1
-  password: e6a2e741-0fce-440b-910c-b81325e2263a
-  port: 443
-  server: cache-giver-wife.stark-industries.solutions
-  sni: cache-giver-wife.stark-industries.solutions
-  type: trojan
-  udp: true
-- ip-version: dual
-  name: 未知_2
-  password: 3482c71a-d01c-4ae5-b454-fa8cb3785f66
-  port: 443
-  server: guy-trace-lyric.stark-industries.solutions
-  skip-cert-verify: false
-  type: trojan
-  udp: true
 - cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇰🇷_KR_韩国
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  server: 154.223.16.212
-  type: ss
-  udp: true
-- alterId: 0
-  cipher: auto
-  ip-version: dual
-  name: 🇩🇰_DK_丹麦->🇺🇸_US_美国
-  network: ws
-  port: 2086
-  server: csgo.com
-  type: vmess
-  udp: true
-  uuid: c21b972a-bc92-4f8c-8e6a-6868001f7f88
-  ws-opts:
-    headers:
-      host: ustoucjjnid18sj6us.lovebaipiao.com
-    path: /
-- ip-version: dual
-  name: 未知_3
-  password: e6a2e741-0fce-440b-910c-b81325e2263a
-  port: 443
-  server: strut-brisk-scope.stark-industries.solutions
-  sni: strut-brisk-scope.stark-industries.solutions
-  type: trojan
-  udp: true
-- ip-version: dual
-  name: 未知_4
-  password: e6a2e741-0fce-440b-910c-b81325e2263a
-  port: 443
-  server: bats-paper-chump.stark-industries.solutions
-  sni: bats-paper-chump.stark-industries.solutions
-  type: trojan
-  udp: true
-- alterId: 2
-  cipher: auto
-  ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_1_2
-  network: ws
-  port: 30805
-  server: v5.heduian.link
-  skip-cert-verify: true
-  sni: ''
-  type: vmess
-  udp: true
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      host: v5.heduian.link
-    path: /oooo
-- ip-version: dual
-  name: 未知_5
-  password: 3482c71a-d01c-4ae5-b454-fa8cb3785f66
-  port: 443
-  server: chop-wrist-bud.stark-industries.solutions
-  skip-cert-verify: false
-  sni: chop-wrist-bud.stark-industries.solutions
-  type: trojan
-  udp: true
-- cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇺🇸_US_美国_1_3
-  password: awsps0501
-  port: 443
-  server: 34.215.48.231
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇷🇺_RU_俄罗斯
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  server: 185.231.233.112
-  type: ss
-  udp: true
-- ip-version: dual
-  name: 🇺🇸_US_美国_2
-  network: ws
-  password: c8eac4b7-95ba-4ce0-920d-c3279eb3b391
-  port: 443
-  server: 172.67.181.193
-  sni: EEeEee4.hUAngSHANG2030.dPdNS.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: EEeEee4.hUAngSHANG2030.dPdNS.org
-    path: /ptGwaGzcA4KNAXX
-- ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  password: b55123f4-0ba2-11f0-a2ef-f23c91cfbbc9
-  port: 15229
-  server: d700ff89-swvls0-t5w83q-1slpx.cu.plebai.net
-  sni: d700ff89-swvls0-t5w83q-1slpx.cu.plebai.net
-  type: trojan
-  udp: true
-- ip-version: dual
-  name: 未知_6
-  password: e6a2e741-0fce-440b-910c-b81325e2263a
-  port: 443
-  server: bring-glove-shine.stark-industries.solutions
-  sni: bring-glove-shine.stark-industries.solutions
-  type: trojan
-  udp: true
-- alterId: 2
-  cipher: auto
-  ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_3
-  network: ws
-  port: 30829
-  server: v29.heduian.link
-  skip-cert-verify: true
-  sni: ''
-  type: vmess
-  udp: true
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      host: ocbc.com
-    path: /oooo
-- ip-version: dual
-  name: 🇺🇸_US_美国_3_2
-  password: 3482c71a-d01c-4ae5-b454-fa8cb3785f66
-  port: 443
-  server: 94.131.20.3
-  sni: chop-wrist-bud.stark-industries.solutions
-  type: trojan
-  udp: true
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_1
-  password: cdBIDV42DCwnfIN
-  port: 8118
-  server: 51.77.53.200
-  type: ss
-- alterId: 0
-  cipher: auto
   name: 🇺🇸_US_美国_1_4
-  network: ws
-  port: 8080
-  server: 172.64.97.235
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: ef8c954e-014f-4b36-8273-9b5086afab34
-  ws-opts:
-    headers:
-      host: luther-soon-uploaded-anxiety.trycloudflare.com
-    path: ef8c954e-014f-4b36-8273-9b5086afab34-vm
-- alterId: 0
-  cipher: auto
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  network: ws
-  port: 16928
-  server: 120.232.240.56
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 5f6b3c3f-b0a8-33f5-95c6-371f8c6af973
-  ws-opts:
-    headers:
-      host: '%7B%22Host%22:%22193.25.215.160%22%7D'
-    path: /v2ray
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_2
-  password: Y6R9pAtvxxzmGC
-  port: 5601
-  server: 51.77.53.200
+  password: amazonskr05
+  port: 443
+  server: 54.244.188.170
   type: ss
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_3
-  password: Y6R9pAtvxxzmGC
-  port: 8888
-  server: 51.77.53.200
-  type: ss
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_4
-  password: Y6R9pAtvxxzmGC
-  port: 3306
-  server: 51.77.53.200
-  type: ss
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国_2_2
-  network: ws
-  port: 2086
-  server: 104.19.38.62
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 29eebb60-b27b-4a9d-bba5-947763d9205e
-  ws-opts:
-    headers:
-      host: ip002.dtku47.xyz
-    path: 29eebb60-b27b-4a9d-bba5-947763d9205e-vm
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_5
-  password: RexnBgU7EV5ADxG
-  port: 7002
-  server: 51.77.53.200
-  type: ss
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国->🇫🇷_FR_法国_1
-  network: ws
-  port: 2082
-  server: 104.21.8.157
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 112ac36f-3f53-4e26-8371-d25c028e1b9a
-  ws-opts:
-    headers:
-      host: s1c.v2.v001sss.xyz
-    path: /
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_6
-  password: cdBIDV42DCwnfIN
-  port: 8119
-  server: 51.77.53.200
-  type: ss
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国_3_3
-  network: ws
-  port: 8880
-  server: russia.com
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 56c6ef30-a930-4bcb-a159-85d9838fadae
-  ws-opts:
-    headers:
-      host: sssub.v2.001.ssrsub.com
-    path: /api/v3/download.getFile
-- alterId: 0
-  cipher: auto
-  name: 🇷🇺_RU_俄罗斯联邦
-  network: tcp
-  port: 59985
-  server: 89.169.53.36
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: d572d74e-427b-4525-9d0d-88608d1a4f19
+  udp: true
 - cipher: chacha20-ietf-poly1305
-  name: 🇺🇸_US_美国_4_2
-  password: lWaGPVFjmnag
-  port: 443
-  server: 205.134.180.139
-  type: ss
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_7
-  password: e4FCWrgpkji3QY
-  port: 9101
-  server: 51.77.53.200
-  type: ss
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_8
-  password: pKEW8JPByTVTLtM
-  port: 4444
-  server: 51.77.53.200
-  type: ss
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_9
-  password: XKFKl2rULjIp74
-  port: 8009
-  server: 51.77.53.200
-  type: ss
-- grpc-opts:
-    grpc-service-name: 443trojan
-  name: 🇺🇸_US_美国->🇷🇺_RU_俄罗斯联邦
-  network: grpc
-  password: qj1Dz1CJmFQRhWr1SP80aA
-  port: 443
-  server: 104.16.1.10
-  skip-cert-verify: true
-  sni: cdn-21.gsmxreality.com
-  type: trojan
-  udp: true
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_10
-  password: TEzjfAYq2IjtuoS
-  port: 6679
-  server: 51.77.53.200
-  type: ss
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_11
-  password: TEzjfAYq2IjtuoS
-  port: 6697
-  server: 51.77.53.200
-  type: ss
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_12
-  password: XKFKl2rULjIp74
-  port: 8008
-  server: 51.77.53.200
-  type: ss
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_13
-  password: KixLvKzwjekG00rm
-  port: 8000
-  server: 51.77.53.200
-  type: ss
-- cipher: aes-256-gcm
-  name: 🇺🇸_US_美国_5
-  password: e4FCWrgpkji3QY
-  port: 9101
-  server: 23.150.152.53
-  type: ss
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_14
-  password: faBAoD54k87UJG7
-  port: 2375
-  server: 51.77.53.200
-  type: ss
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国_6
-  network: ws
-  port: 2086
-  server: 104.19.51.232
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 29eebb60-b27b-4a9d-bba5-947763d9205e
-  ws-opts:
-    headers:
-      host: ip002.dtku47.xyz
-    path: 29eebb60-b27b-4a9d-bba5-947763d9205e-vm
-- name: 🇮🇪_IE_爱尔兰
-  network: tcp
-  password: telegram-id-privatevpns
-  port: 22222
-  server: 54.76.69.126
-  skip-cert-verify: false
-  sni: trojan.burgerip.co.uk
-  type: trojan
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国->🇫🇷_FR_法国_2
-  network: ws
-  port: 2082
-  server: s1c.v2.v001sss.xyz
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 112ac36f-3f53-4e26-8371-d25c028e1b9a
-  ws-opts:
-    headers:
-      host: s1c.v2.v001sss.xyz
-    path: /
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_15
-  password: Y6R9pAtvxxzmGC
-  port: 5000
-  server: 51.77.53.200
-  type: ss
-- cipher: aes-256-gcm
-  name: 🇵🇱_PL_波兰_16
-  password: FoOiGlkAA9yPEGP
-  port: 7307
-  server: 51.77.53.200
-  type: ss
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国_7
-  network: ws
-  port: 80
-  server: russia.com
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 56c6ef30-a930-4bcb-a159-85d9838fadae
-  ws-opts:
-    headers:
-      host: sssub.v2.001.ssrsub.com
-    path: /api/v3/download.getFile
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国->🇫🇷_FR_法国_3
-  network: ws
-  port: 2082
-  server: 172.67.130.140
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 112ac36f-3f53-4e26-8371-d25c028e1b9a
-  ws-opts:
-    headers:
-      host: s1c.v2.v001sss.xyz
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国_8
-  network: ws
-  port: 2086
-  server: fbi.gov
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 29eebb60-b27b-4a9d-bba5-947763d9205e
-  ws-opts:
-    headers:
-      host: ip002.dtku47.xyz
-    path: 29eebb60-b27b-4a9d-bba5-947763d9205e-vm
-- cipher: aes-256-cfb
-  name: 🇻🇳_VN_越南
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  port: 38388
-  server: 103.186.154.181
-  type: ss
-  udp: true
-- name: 🇳🇱_NL_荷兰->🇺🇸_US_美国
-  network: ws
-  port: 2096
-  server: 188.42.88.238
-  servername: sni.jpmj.dev
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: sni.jpmj.dev
-- name: 🇧🇿_BZ_伯利兹
-  network: ws
-  port: 2096
-  server: 45.131.6.191
-  servername: sni.my111000.tech
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: sni.my111000.tech
-    path: Telegram%F0%9F%87%A8%F0%9F%87%B3@WangCai2/
-- name: 🇺🇸_US_美国_3
-  network: ws
-  port: 443
-  server: 135.84.73.245
-  servername: sni.111000.dynv6.net
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: sni.111000.dynv6.net
-- cipher: aes-256-cfb
-  name: 🇪🇸_ES_西班牙_4
-  password: dU3DSNS8wYPXzEKw
-  port: 9029
-  server: 5.188.181.201
+  name: 🇳🇱_NL_荷兰_4
+  password: a8bt9fY0QsLS6eLnXUe0Ym
+  port: 8080
+  server: 45.158.171.2
   type: ss
   udp: true
 - cipher: aes-256-cfb
-  name: 🇻🇳_VN_越南_1
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  port: 38388
-  server: 103.186.154.166
+  name: 🇨🇳_CN_中国->🇩🇪_DE_德国
+  password: bbO8KazkNBUGb7HP
+  port: 20934
+  server: 221.181.185.71
   type: ss
   udp: true
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇫🇮_FI_芬兰
-  port: 18038
-  reality-opts:
-    public-key: UDLhjunZjP-5A6KBMeuWe3qp_FusLAshcQIcCF7EZh8
-    short-id: ce9f790791426d83
-  server: 144.31.82.47
-  servername: www.microsoft.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: a42c8b66-d0a7-4b49-9143-b98f1c84edba
-- client-fingerprint: qq
-  flow: xtls-rprx-vision
-  name: 🇯🇵_JP_日本->🇹🇼_TW_中国台湾
-  port: 55309
-  reality-opts:
-    public-key: 7BS-JUFgYVaWrwwyDSiVq_YDoG36w8cRd4U8HvEg-F0
-    short-id: 4bcbc85d
-  server: 216.23.108.4
-  servername: download.windowsupdate.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 9c5d1bf0-d58b-4001-9e7c-0c1fa314068c
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇯🇵_JP_日本_2
-  port: 55305
-  reality-opts:
-    public-key: 7BS-JUFgYVaWrwwyDSiVq_YDoG36w8cRd4U8HvEg-F0
-    short-id: 4bcbc85d
-  server: 216.23.108.4
-  servername: download.windowsupdate.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 9c5d1bf0-d58b-4001-9e7c-0c1fa314068c
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 🇬🇧_GB_英国
-  port: 443
-  server: london1.ap221.com
-  servername: london.ap221.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 3a1d7c1d-09c6-4c81-8e11-75dd4ab1ac07
-- name: 🇰🇷_KR_韩国_2
-  network: ws
-  port: 38241
-  server: 59.4.161.71
-  servername: sni.111000.v6.army
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: sni.111000.v6.army
-    path: /?ed=2560
-- cipher: aes-256-cfb
-  name: 🇻🇳_VN_越南_2
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  port: 38388
-  server: 103.186.154.174
-  type: ss
-  udp: true
-- client-fingerprint: safari
-  flow: xtls-rprx-vision
-  name: 🇯🇵_JP_日本->🇸🇬_SG_新加坡
-  port: 55313
-  reality-opts:
-    public-key: 7BS-JUFgYVaWrwwyDSiVq_YDoG36w8cRd4U8HvEg-F0
-    short-id: 4bcbc85d
-  server: 216.23.108.4
-  servername: download.windowsupdate.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 9c5d1bf0-d58b-4001-9e7c-0c1fa314068c
-- cipher: aes-256-cfb
-  name: 🇻🇳_VN_越南_3
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  port: 38388
-  server: 103.186.154.40
-  type: ss
-  udp: true
-- client-fingerprint: chrome
-  name: 🇹🇭_TH_泰国
-  port: 443
-  reality-opts:
-    public-key: TRP10HqKUXEQ3O-cfsq93DycfBmbJe9KM36yvSa8Mmw
-  server: 47.81.36.237
-  servername: api.digital-help-prd.autodesk.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 3e7f67de-648e-4871-b51a-a225214d41ee
-- name: 🇰🇷_KR_韩国_1
-  network: ws
-  port: 10333
-  server: 121.175.77.73
-  servername: sni.111000.v6.army
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: sni.111000.v6.army
-    path: /?ed=2560
-- flow: xtls-rprx-vision
-  name: 🇺🇸_US_美国_2_3
-  port: 17195
-  server: 104.250.239.8
-  servername: usvless.yydzx.xyz
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2219a1b1-9290-4ac5-94fd-6cfc1fb25280
-- name: 🇯🇵_JP_日本_1
-  network: ws
-  port: 443
-  server: 158.51.110.12
-  servername: pagescm.freen5.cc.cd
-  tls: true
-  type: vless
-  udp: true
-  uuid: ae0dd58e-e222-40bf-84ae-365a97532737
-  ws-opts:
-    headers:
-      Host: pagescm.freen5.cc.cd
-    path: /showfp=chrome
-- name: 🇺🇸_US_美国_3_4
-  network: ws
-  port: 443
-  server: 104.17.101.139
-  servername: sni.111000.dynv6.net
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: sni.111000.dynv6.net
-    path: /?proxyip=ip.111000.de5.net%3A443
-- cipher: chacha20-ietf
-  name: 🇭🇰_HK_中国香港_4
-  password: asd123456
-  port: 8388
-  server: 103.149.182.105
-  type: ss
-  udp: true
-- name: 🇰🇿_KZ_哈萨克斯坦
-  network: ws
-  port: 443
-  server: 31.43.179.238
-  servername: sni.jpmj.dev
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: sni.jpmj.dev
-- client-fingerprint: chrome
-  name: 🇺🇸_US_美国_4_3
-  network: ws
-  port: 2096
-  server: 139.64.235.238
-  servername: sni.jpmj.dev
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: sni.jpmj.dev
-    path: /
-- name: 🇺🇸_US_美国_5_2
-  network: ws
-  port: 2096
-  server: 45.153.7.191
-  servername: sni.my111000.tech
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: sni.my111000.tech
-- name: 🇺🇸_US_美国_6_2
-  network: ws
-  port: 443
-  server: 162.159.17.207
-  servername: sni.111000.v6.army
-  tls: true
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: sni.111000.v6.army
-    path: /?https%3A%2F%2Ft.me%2Fwangcai2%F0%9F%87%A8%F0%9F%87%B3=
-- cipher: aes-256-cfb
-  name: 🇻🇳_VN_越南_4
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  port: 38388
-  server: 103.186.155.114
+- cipher: aes-256-gcm
+  name: 🇺🇸_US_美国_2
+  password: lGqs95QkFHo2NV
+  port: 5499
+  server: 169.197.141.84
   type: ss
   udp: true
 - cipher: aes-256-cfb
-  name: 🇻🇳_VN_越南_5
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  port: 38388
-  server: 103.186.154.234
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_2
+  password: JN8psKoncqaqS4ul
+  port: 22064
+  server: 221.181.185.71
   type: ss
   udp: true
-- name: 🇨🇾_CY_塞浦路斯
-  network: ws
-  port: 8880
-  server: 77.37.33.40
-  tls: false
-  type: vless
+- cipher: aes-256-gcm
+  name: 🇺🇸_US_美国_3_2
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 69.50.92.72
+  type: ss
   udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: vms.lifetime57.workers.dev
-    path: /?ed=2560&https://t.me/youtube@ZYFXS🇨🇳
+- cipher: chacha20-ietf-poly1305
+  name: 🇩🇪_DE_德国->🇺🇸_US_美国
+  password: gDFRe52uiIvVaxqPlqw439
+  port: 8080
+  server: 45.87.175.192
+  type: ss
+  udp: true
 - cipher: aes-128-gcm
-  name: 🇷🇺_RU_俄罗斯_2
-  password: 6784aee2-0dfe-474f-8446-480259ff9918
-  port: 442
-  server: ru.safepass.click
+  name: 🇬🇧_GB_英国->🇷🇺_RU_俄罗斯
+  password: shadowsocks
+  port: 443
+  server: 212.102.53.198
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国->🇨🇳_CN_中国
+  password: amazonskr05
+  port: 443
+  server: 52.43.33.6
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_4_2
+  password: amazonskr05
+  port: 443
+  server: 35.95.35.113
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_5
+  password: amazonskr05
+  port: 443
+  server: 35.87.156.159
   type: ss
   udp: true
 - client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 美国(yudou789.top 玉豆分享)
-  port: 20975
-  reality-opts:
-    public-key: GVg6RWWCJfXATSmArzQD69rXqs9-804Ot-_uX3WrJE4
-    short-id: 2bb0dc48
-  server: 18.136.119.69
-  servername: www.cloudflare.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: d00d9d18-20cf-4191-be76-6f73d43a27ec
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 美国(yudou789.top 玉豆分享)_1
-  port: 28243
-  reality-opts:
-    public-key: IXxfPvq2OkbSuA-ZTBFpMzkDU1uO8dEI1e7s9VfHh1Y
-    short-id: 7996bf4dcf194d18
-  server: 18.139.227.162
-  servername: www.cloudflare.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: d00d9d18-20cf-4191-be76-6f73d43a27ec
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: 美国(yudou789.top 玉豆分享)_2
-  port: 38830
-  reality-opts:
-    public-key: 5E5p5boHrgCyBlt5qZPX1XozU9I90JoBgS4zmXngllI
-    short-id: ac12ed79
-  server: 13.230.30.102
-  servername: www.cloudflare.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: d00d9d18-20cf-4191-be76-6f73d43a27ec
-- client-fingerprint: chrome
-  name: 美国(yudou789.top 玉豆分享)_200
-  network: ws
-  port: 8443
-  server: 38.148.253.135
-  servername: shephe.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 9e3132b8-b595-444a-833a-2de44789f9d7
-  ws-opts:
-    headers:
-      Host: shephe.dpdns.org
-    path: /
-- client-fingerprint: firefox
-  grpc-opts:
-    grpc-service-name: media.v1.StreamService
-  name: 美国(yudou789.top 玉豆分享)_201
-  network: grpc
+  name: 荷兰(yudou789.top 玉豆分享)_2_2
   port: 443
   reality-opts:
-    public-key: sXsJ4ET-50TYqlhKZf03nPQr2JIy1F0D4m6lOsI0cAs
-    short-id: 861ac7d66953e55f
-  server: rs4.univesalsrv.com
-  servername: rs4.univesalsrv.com
+    public-key: RYfzci_ctBzEbBah0jwygnWrGer9_LQfjOgmh9VizQE
+    short-id: f9
+  server: 94.237.40.197
+  servername: bazitory.com
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
-- cipher: 2022-blake3-chacha20-poly1305
-  name: 新加坡(yudou789.top 玉豆分享)
-  password: OD1p/OGuWN9AneAVzkNz0dQtKbZIkOJ9Ji9QTYcGmDY=
-  port: 56927
-  server: 138.2.84.129
-  skip-cert-verify: true
-  type: ss
-  udp: true
-- cipher: 2022-blake3-chacha20-poly1305
-  name: 英国(yudou789.top 玉豆分享)
-  password: +Nt5IdazH1gH7Cg7OvFoDX8Rx3koZi3YnHbunnlAuUM=
-  port: 61312
-  server: 129.151.66.142
-  skip-cert-verify: true
-  type: ss
-  udp: true
+  uuid: e96896d8-72d1-496f-8d28-b3fa0de4a562
 - client-fingerprint: chrome
-  name: 韩国(yudou789.top 玉豆分享)
+  name: 美国(yudou789.top 玉豆分享)_27
+  network: xhttp
+  port: 25395
+  reality-opts:
+    public-key: NPeupAuDrIhrFEXxPXUnsmuT0zSOkSQByegy5DPJQhU
+    short-id: b4
+  server: 143.246.41.6
+  servername: amd.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 900e2cca-4798-47f6-b972-5288a77c8093
+  xhttp-opts:
+    path: /
+- client-fingerprint: chrome
+  name: 韩国(yudou789.top 玉豆分享)_2
   network: ws
   port: 443
   server: 158.247.222.168
@@ -47569,457 +47495,276 @@ proxies:
     headers:
       Host: spjd.cbc.qzz.io
     path: /proxyip=ProxyIP.US.CMLiussss.net
-- client-fingerprint: chrome
-  name: 英国(yudou789.top 玉豆分享)_1
+- name: 新加坡(yudou789.top 玉豆分享)_2
   network: ws
-  port: 80
-  server: 194.36.55.146
-  servername: 194.36.55.146
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 964e6322-afad-4594-8508-86d634d732e6
-  ws-opts:
-    headers:
-      Host: blacklegends.umc-mansur13.workers.dev
-    path: /
-- client-fingerprint: unsafe
-  name: 香港(yudou789.top 玉豆分享)_1
-  network: ws
-  port: 8443
-  server: 129.211.188.184
-  servername: jp3.yohototo.top
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  ws-opts:
-    headers:
-      Host: jp3.yohototo.top
-    path: /tyxyws
-- alterId: 0
-  cipher: auto
-  name: 美国(yudou789.top 玉豆分享)_2
-  port: 50011
-  server: 36.133.79.17
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: e37149b8-63df-4b4e-bd17-d7fc0b3009db
-- alterId: 0
-  cipher: auto
-  name: 美国(yudou789.top 玉豆分享)_14
-  port: 50011
-  server: 157.148.7.136
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: e37149b8-63df-4b4e-bd17-d7fc0b3009db
-- alterId: 0
-  cipher: auto
-  name: 美国(yudou789.top 玉豆分享)_17
-  port: 50011
-  server: 157.148.7.55
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: f114d414-1535-4321-856c-29979eeed799
-- alterId: 0
-  cipher: auto
-  name: 美国(yudou789.top 玉豆分享)_20
-  port: 50014
-  server: 36.133.78.37
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: abcb006d-739f-4cec-b13f-12c10d334d92
-- alterId: 0
-  cipher: auto
-  name: 美国(yudou789.top 玉豆分享)_23
-  port: 50017
-  server: 36.133.78.37
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: e37149b8-63df-4b4e-bd17-d7fc0b3009db
-- alterId: 0
-  cipher: auto
-  name: 美国(yudou789.top 玉豆分享)_25
-  port: 50015
-  server: 36.133.78.37
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 148e82ae-5014-4a1a-a783-dd63fa9cdc9d
-- name: 韩国(yudou789.top 玉豆分享)_2
-  password: 13f0acfa-38c1-4e82-a758-583aa31740df
-  port: 60005
-  server: svip.skycon808.com
-  skip-cert-verify: true
-  sni: xjp18.2uuzhe.com
-  tls: true
-  type: anytls
-  udp: true
-- client-fingerprint: chrome
-  name: 美国(yudou789.top 玉豆分享)_45
   port: 443
-  reality-opts:
-    public-key: i_UbRo65YEpOFuKkNVa0GEMl7xLDx9B1nmeyeNWyJQs
-    short-id: 68e97022627fa882
-  server: 35.233.43.229
-  servername: www.cloudflare.com
+  server: 43.174.195.1
+  servername: kv.074167.xyz
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: e3fb56fe-bdbc-4f0e-b1ed-de2f7c85f254
+  uuid: 24916ad0-847d-4522-9e17-f4347dee57fd
+  ws-opts:
+    headers:
+      Host: kv.074167.xyz
+    path: /
 - client-fingerprint: firefox
   grpc-opts:
-    grpc-service-name: edge.v2.FeedService
-  name: 美国(yudou789.top 玉豆分享)_47
+    grpc-service-name: gw.v1.ObjectService
+  name: 美国(yudou789.top 玉豆分享)_1
   network: grpc
   port: 443
   reality-opts:
-    public-key: gHDoSWGWMVZKWNKONWHw-Cpl0-bdI6GaKusgJIQ-vWQ
-    short-id: 35d05b666e2c6cdf
-  server: 150.40.126.21
-  servername: rs3.univesalsrv.com
+    public-key: X8mPYnsoTd8QCnvFZKSy7VvpSn_nrt_NWJkCUJhFCyE
+    short-id: 4872856d5489c37d
+  server: 150.40.126.24
+  servername: rs5.univesalsrv.com
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
   uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
-- alterId: 0
-  cipher: auto
-  name: 美国(yudou789.top 玉豆分享)_54
-  port: 50012
-  server: 36.133.78.37
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 9e63ca55-1ff9-453b-ae80-75947b8596d3
-- client-fingerprint: chrome
+- client-fingerprint: firefox
   grpc-opts:
-    grpc-service-name: grpc
-  name: 德国(yudou789.top 玉豆分享)
+    grpc-service-name: grpc-tunnel
+  name: 俄罗斯(yudou789.top 玉豆分享)
   network: grpc
-  port: 443
+  port: 9830
   reality-opts:
-    public-key: gyVm1AWjn649wcSvTmyS12lsmecJFjm51BjUSWOjkxM
-    short-id: 35debf0dc757d053
-  server: 31.56.189.147
-  servername: max.ru
+    public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
+    short-id: aabb
+  server: 176.109.109.105
+  servername: dl.google.com
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 99e5e9a0-1c6b-4cb0-805d-a810fd47eb15
-- client-fingerprint: chrome
-  name: 荷兰(yudou789.top 玉豆分享)_2
+  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+- client-fingerprint: safari
+  name: 美国(yudou789.top 玉豆分享)_13
   network: ws
   port: 8443
-  server: 188.164.248.123
-  servername: vp21.cc.cd
+  server: 188.114.96.3
+  servername: us.luxes.network
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 7b102311-43fd-4e8f-877e-8090623c101d
+  uuid: 69848b7f-3ee7-4c30-b035-6cff5e08ac4a
   ws-opts:
-    headers:
-      Host: vp21.cc.cd
-    path: /
-- client-fingerprint: chrome
-  name: 美国(yudou789.top 玉豆分享)_57
-  network: ws
-  port: 443
-  server: 172.67.71.252
-  servername: spjd.cbc.qzz.io
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 37665857-8b6e-4daa-8231-3e2927221558
-  ws-opts:
-    headers:
-      Host: spjd.cbc.qzz.io
-    path: /proxyip=ProxyIP.US.CMLiussss.net
-- alterId: 0
-  cipher: auto
-  name: 美国(yudou789.top 玉豆分享)_60
-  port: 50018
-  server: 36.133.78.37
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: abcb006d-739f-4cec-b13f-12c10d334d92
-- client-fingerprint: chrome
-  name: 德国(yudou789.top 玉豆分享)_1
-  port: 443
-  reality-opts:
-    public-key: XRYeVrK7q9baNj66NmBBIX_sllPJtxOBTjrxTaQMQ2U
-    short-id: 7394ea3cc2106697
-  server: 34.159.243.3
-  servername: www.cloudflare.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 753fa5ef-0b08-4fd3-b688-173ff594b758
-- name: 美国(yudou789.top 玉豆分享)_62
-  password: mitivpn
-  port: 443
-  server: 199.232.78.101
-  skip-cert-verify: true
-  sni: ssl.fastly.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: mitivpn---de--s---mitivpn-11.global.ssl.fastly.net
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSus---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-- name: 美国(yudou789.top 玉豆分享)_63
-  password: mitivpn
-  port: 443
-  server: 199.232.78.170
-  skip-cert-verify: true
-  sni: ssl.fastly.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: mitivpn---de--s---mitivpn-11.global.ssl.fastly.net
-    path: /
-- client-fingerprint: chrome
-  name: 美国(yudou789.top 玉豆分享)_64
-  network: ws
-  port: 443
-  server: 143.198.97.84
-  servername: spjd.cbc.qzz.io
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 37665857-8b6e-4daa-8231-3e2927221558
-  ws-opts:
-    headers:
-      Host: spjd.cbc.qzz.io
-    path: /proxyip=ProxyIP.US.CMLiussss.net
-- cipher: aes-128-gcm
-  name: 香港(yudou789.top 玉豆分享)_1_2
-  password: bKgENdAl@8Zx3lAc-HK-BD-20260622
-  port: 24443
-  server: 154.86.30.45
-  skip-cert-verify: true
-  type: ss
-  udp: true
-- client-fingerprint: chrome
-  name: 美国(yudou789.top 玉豆分享)_68
-  port: 443
-  reality-opts:
-    public-key: -Tb9KKp870JxcZ3Ka7Rx5ez3QBYryX4e8_jdyNZu2wE
-    short-id: ed278463058a6dc9
-  server: 34.154.18.129
-  servername: www.cloudflare.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: fffe33b6-5735-4a71-adb1-1c154def9024
-- name: 美国(yudou789.top 玉豆分享)_69
-  password: mitivpn
-  port: 443
-  server: 167.82.76.7
-  skip-cert-verify: true
-  sni: ssl.fastly.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: mitivpn---us--s---mitivpn-11.global.ssl.fastly.net
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-- alterId: 0
-  cipher: auto
-  name: 美国(yudou789.top 玉豆分享)_74
-  network: ws
-  port: 18901
-  server: 2001:bc8:32d7:1a9::2
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 3a966d20-7b9d-48cc-ba2c-8d38161b6d3a
-  ws-opts:
-    path: /github.com/Alvin9999-newpac/fanqiang
+    path: /assets?ed
 - client-fingerprint: chrome
   grpc-opts:
-    grpc-service-name: home.v1.ApiService
-  name: 美国(yudou789.top 玉豆分享)_75
+    grpc-service-name: media.v1.ObjectService
+  name: 美国(yudou789.top 玉豆分享)_14_2
   network: grpc
   port: 443
   reality-opts:
-    public-key: XBfCioniAKXgKYBUVnvBXu80AIaIa4SpAB3w8qeF7Gk
-    short-id: 1be1bd931c98c84a
-  server: 45.9.156.27
-  servername: bg3.univesalsrv.com
+    public-key: tL16MVY08r-7YDXb1_gxuBBWInpSFp97ZLJ_ax3R2iE
+    short-id: 1469af2040b7c323
+  server: rs2.univesalsrv.com
+  servername: rs2.univesalsrv.com
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
   uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
 - client-fingerprint: chrome
-  name: 美国(yudou789.top 玉豆分享)_77
-  port: 443
-  reality-opts:
-    public-key: tT6wEOh8ASizQYNRb51QdDlxAksSJbEaBnbQBajc6SQ
-    short-id: c5426331173ca15c
-  server: 34.18.161.225
-  servername: www.cloudflare.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: b6f775c2-70fd-4247-8d12-82cac46fdd50
-- client-fingerprint: chrome
-  name: 美国(yudou789.top 玉豆分享)_80
-  port: 443
-  reality-opts:
-    public-key: -bjPqNKxxGTKCmH6dwsdGRTUzuatAowBWxyOPW4BiVQ
-    short-id: 7e7623474d41f032
-  server: 34.118.43.106
-  servername: www.cloudflare.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 16e310b7-659e-45ee-a4b0-10e0289b8621
-- client-fingerprint: chrome
-  name: 美国(yudou789.top 玉豆分享)_82
+  name: 美国(yudou789.top 玉豆分享)_16
   network: ws
-  port: 443
-  server: 141.98.233.6
-  servername: spjd.cbc.qzz.io
+  port: 2087
+  server: 5.45.115.162
+  servername: qcswhj2.edge-cache.danfeng4.xyz
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 37665857-8b6e-4daa-8231-3e2927221558
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
   ws-opts:
     headers:
-      Host: spjd.cbc.qzz.io
-    path: /proxyip=ProxyIP.US.CMLiussss.net
-- alterId: 0
-  cipher: auto
-  name: 美国(yudou789.top 玉豆分享)_83
-  network: ws
+      Host: qcswhj2.edge-cache.danfeng4.xyz
+    path: /danfeng-pw8lj2-nzliwt-h23l-978coeve?ed=2560
+- name: 美国(yudou789.top 玉豆分享)_20_2
+  password: 8GXLP3dEzm7T8wP5Jx0Ufg
   port: 443
-  server: yg1.ygkkk.dpdns.org
+  server: 199.107.164.105
   skip-cert-verify: true
-  tls: true
-  type: vmess
+  sni: quictest.burncommunity.ru
+  type: trojan
   udp: true
-  uuid: b2ba4a73-3123-479e-aa96-5973a9ecd0c0
   ws-opts:
     headers:
-      Host: jmp1.907737.xyz
-    path: /b2ba4a73-3123-479e-aa96-5973a9ecd0c0-vm
-- name: 俄罗斯(yudou789.top 玉豆分享)_5
-  password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-  port: 22443
-  server: 91.240.86.70
-  skip-cert-verify: true
-  sni: hy.quattro-tech.ru
-  type: hysteria2
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 美国(yudou789.top 玉豆分享)_85
-  port: 50013
-  server: 36.133.78.37
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 23b5790c-4e96-49fa-95fc-9079ce9cf43c
+      Host: quictest.burncommunity.ru
+    path: /
 - client-fingerprint: chrome
-  name: 美国(yudou789.top 玉豆分享)_88
+  name: 荷兰(yudou789.top 玉豆分享)_2_3
   network: ws
-  port: 8443
-  server: 46.36.220.183
-  servername: spjd.cbc.qzz.io
+  port: 2087
+  server: 193.124.56.100
+  servername: qcswhj2.edge-cache.danfeng4.xyz
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 37665857-8b6e-4daa-8231-3e2927221558
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
   ws-opts:
     headers:
-      Host: spjd.cbc.qzz.io
-    path: /proxyip=ProxyIP.US.CMLiussss.net
+      Host: qcswhj2.edge-cache.danfeng4.xyz
+    path: /danfeng-pw8lj2-nzliwt-h23l-978coeve?ed=2560
 - client-fingerprint: chrome
-  name: 新加坡(yudou789.top 玉豆分享)_2
+  name: 意大利(yudou789.top 玉豆分享)
+  network: ws
   port: 443
-  reality-opts:
-    public-key: hJCcmOf_ECJ3GUfHUjsgfcFKcgGb22H7cz_m_FvcVm4
-    short-id: eb97ce837da2f6ad
-  server: 136.85.2.50
-  servername: www.cloudflare.com
+  server: 179.255.190.5
+  servername: qcswhj2.edge-cache.danfeng4.xyz
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 5567cac6-2a32-4318-83cd-7df3a9eebbd7
-- client-fingerprint: chrome
-  name: 西班牙(yudou789.top 玉豆分享)
-  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  ws-opts:
+    headers:
+      Host: qcswhj2.edge-cache.danfeng4.xyz
+    path: /danfeng-pw8lj2-nzliwt-h23l-978coeve?ed=2560
+- name: 香港(yudou789.top 玉豆分享)_1_2
+  password: fac593ac-d6aa-4523-bea9-b3eb2a2b3da3
+  port: 13209
+  server: f533f9b2-c69a-4dd0-bc63-f2ab94dd5f53.f1eb10ae-1d82-4c6a-b4dd-bd9525520956.com
+  skip-cert-verify: true
+  sni: 207.yuanul.com
+  type: trojan
+  udp: true
+- client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: grpc-tunnel
+  name: 俄罗斯(yudou789.top 玉豆分享)_5_2
+  network: grpc
+  port: 9880
   reality-opts:
-    public-key: iI9J--AfPKCXbVle3Om-WMn_g-3bO3SsVzUCNtwUkU0
-    short-id: fe85cb6a5c84e64c
-  server: 34.175.19.8
-  servername: www.cloudflare.com
+    public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
+    short-id: aabb
+  server: 176.109.108.244
+  servername: dl.google.com
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 0b4b1548-c7ca-45a5-9096-6c3cc4b1c43b
+  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+- client-fingerprint: chrome
+  name: 美国(yudou789.top 玉豆分享)_36
+  network: ws
+  port: 443
+  server: 8.35.211.248
+  servername: qcswhj2.edge-cache.danfeng4.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  ws-opts:
+    headers:
+      Host: qcswhj2.edge-cache.danfeng4.xyz
+    path: /danfeng-pw8lj2-nzliwt-h23l-978coeve?ed=2560
+- client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: grpc-tunnel
+  name: 俄罗斯(yudou789.top 玉豆分享)_10
+  network: grpc
+  port: 9892
+  reality-opts:
+    public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
+    short-id: aabb
+  server: 176.108.241.126
+  servername: dl.google.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+- name: 美国(yudou789.top 玉豆分享)_37
+  password: humanity
+  port: 443
+  server: 162.159.36.20
+  skip-cert-verify: true
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+  ws-opts:
+    path: /assignment
+- name: 美国(yudou789.top 玉豆分享)_39
+  password: humanity
+  port: 443
+  server: 172.64.150.28
+  skip-cert-verify: true
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.calmlunch.com
+    path: /assignment
+- client-fingerprint: random
+  grpc-opts:
+    grpc-service-name: grpc-tunnel
+  name: 俄罗斯(yudou789.top 玉豆分享)_17
+  network: grpc
+  port: 9891
+  reality-opts:
+    public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+    short-id: aa
+  server: 45.132.176.161
+  servername: dl.google.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: 美国(yudou789.top 玉豆分享)_42
+  port: 443
+  reality-opts:
+    public-key: bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk
+    short-id: ff776ff77be48b88
+  server: 31.76.84.174
+  servername: yaruss.stopingiphatered.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
 proxy-groups:
 - interval: 300
   name: 🚀 自动选择
   proxies:
-  - 🇨🇳_CN_中国
+  - 🇭🇰_HK_中国香港->🇯🇵_JP_日本
+  - 🇪🇸_ES_西班牙
   - 🇩🇪_DE_德国
+  - 🇵🇱_PL_波兰
   - 🇭🇰_HK_中国香港
   - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇺🇸_US_美国
-  - 🇩🇪_DE_德国_1
-  - 🇪🇸_ES_西班牙
-  - 🇩🇪_DE_德国_2
-  - 🇵🇱_PL_波兰
-  - 🇭🇰_HK_中国香港_2
   - 🇭🇰_HK_中国香港->🇺🇸_US_美国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇭🇰_HK_中国香港->🇫🇷_FR_法国
+  - 🇩🇪_DE_德国_1
+  - 🇨🇳_CN_中国
   - 🇨🇳_CN_中国->🇰🇷_KR_韩国
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港
   - 🇩🇪_DE_德国->🇳🇱_NL_荷兰
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港_1
-  - 🇩🇪_DE_德国_3
+  - 🇩🇪_DE_德国_2
   - 🇪🇸_ES_西班牙_2
   - 🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港_2
   - 🇳🇱_NL_荷兰
   - 🇺🇸_US_美国->🇯🇵_JP_日本
   - 🇺🇸_US_美国->🇭🇰_HK_中国香港
+  - 🇩🇪_DE_德国_3
+  - 🇳🇱_NL_荷兰_2
+  - 🇯🇵_JP_日本
+  - 🇯🇵_JP_日本_1
   - 🇺🇸美國丨yoyapai.com
   - 🇺🇸US美国丨yoyapai.com
   - 🇩🇪DE德国丨yoyapai.com
@@ -49061,10 +48806,10 @@ proxy-groups:
   - 🇵🇱_PL_波兰_2
   - 🇺🇸_US_美国_3
   - 🇦🇺_AU_澳大利亚->🇫🇮_FI_芬兰
-  - 🇯🇵_JP_日本
+  - 🇯🇵_JP_日本_2
   - 🇹🇷_TR_土耳其->🇳🇱_NL_荷兰
   - 🇺🇸_US_美国_4
-  - 🇭🇰_HK_中国香港_3
+  - 🇭🇰_HK_中国香港_2
   - 🇲🇩_MD_摩尔多瓦
   - US美国(mibei77.com 米贝节点分享)_3_2
   - GB英国(mibei77.com 米贝节点分享)_2
@@ -50301,30 +50046,19 @@ proxy-groups:
   - 🇺🇸US_659|1.9MB/s|R002-260618 01
   - 🇲🇽MX_5|336KB/s|R002-260618 01
   - 🇫🇷FR_1863|3.4MB/s|V008-260618 01
-  - 8元老牌专线机场：cczzuu.top
-  - 🇭🇰 香港_XGR6BO
-  - 🇧🇬 保加利亚_T210CG
-  - 🇩🇪 德国_77LFIF
-  - 🇩🇪 德国_DFK239
-  - 🇳🇱 荷兰_5G0CKQ
-  - 🇲🇩 摩尔多瓦_W0G4C7
-  - 🇩🇪 德国_M96M2D
-  - 🇪🇪 爱沙尼亚_MW9QP4
-  - 🇺🇦 乌克兰_B1SRD6
-  - 🇨🇭 瑞士_2MK4C9
-  - 🇨🇭 瑞士_U03VTC
-  - 🇷🇸 塞尔维亚_IH9NFZ
-  - 🇭🇰 香港_L8TA4Q
-  - 🇳🇱 荷兰_Y9K6JB
-  - 🇰🇿 哈萨克斯坦_CAV7VU
-  - 🇳🇱 荷兰_33NSPK
+  - 🇭🇰 香港_MOIH09
+  - 🇭🇰 香港_5HWLCA
+  - 🇧🇬 保加利亚_6HU8B8
   - 🇮🇳 印度_DHFIR7
   - 🇧🇬 保加利亚_LTKV4B
   - 🇩🇪 德国_RG1L53
   - 🇷🇸 塞尔维亚_YG60JZ
   - 🇷🇸 塞尔维亚_QXA7IT
+  - 🇷🇸 塞尔维亚_JIA2L9
   - 🇨🇭 瑞士_6MD7MV
   - 🇷🇸 塞尔维亚_ZR66VP
+  - 🇰🇿 哈萨克斯坦_0ILNZV
+  - 🇲🇩 摩尔多瓦_A9Q3KC
   - 🇩🇪 德国_40QYVD
   - 🇪🇸 西班牙_DT6G96
   - 🇩🇪 德国_9T54T1
@@ -50335,6 +50069,8 @@ proxy-groups:
   - 🇸🇪 瑞典_5MB6M2
   - 🇪🇸 西班牙_869ONZ
   - 🇷🇺 俄罗斯_Q19OLV
+  - 🇫🇮 芬兰_B64TVL
+  - 🇳🇱 荷兰_A8TU1P
   - tg频道:@freenodedaily
   - 🇭🇰 香港3
   - 🇭🇰 香港2
@@ -50348,6 +50084,63 @@ proxy-groups:
   - 🇰🇷 韩国
   - 🇺🇸 美国
   - 🇺🇸 美国2
+  - 美国(yudou789.top 玉豆分享)
+  - 美国(yudou789.top 玉豆分享)_14
+  - 美国(yudou789.top 玉豆分享)_17
+  - 美国(yudou789.top 玉豆分享)_20
+  - 美国(yudou789.top 玉豆分享)_23
+  - 美国(yudou789.top 玉豆分享)_25
+  - 韩国(yudou789.top 玉豆分享)
+  - 美国(yudou789.top 玉豆分享)_45
+  - 美国(yudou789.top 玉豆分享)_47
+  - 美国(yudou789.top 玉豆分享)_54
+  - 德国(yudou789.top 玉豆分享)
+  - 荷兰(yudou789.top 玉豆分享)_2
+  - 美国(yudou789.top 玉豆分享)_57
+  - 美国(yudou789.top 玉豆分享)_60
+  - 德国(yudou789.top 玉豆分享)_1
+  - 美国(yudou789.top 玉豆分享)_62
+  - 美国(yudou789.top 玉豆分享)_63
+  - 美国(yudou789.top 玉豆分享)_64
+  - 香港(yudou789.top 玉豆分享)_1
+  - 美国(yudou789.top 玉豆分享)_68
+  - 美国(yudou789.top 玉豆分享)_69
+  - 美国(yudou789.top 玉豆分享)_74
+  - 美国(yudou789.top 玉豆分享)_75
+  - 美国(yudou789.top 玉豆分享)_77
+  - 美国(yudou789.top 玉豆分享)_80
+  - 美国(yudou789.top 玉豆分享)_82
+  - 美国(yudou789.top 玉豆分享)_83
+  - 俄罗斯(yudou789.top 玉豆分享)_5
+  - 美国(yudou789.top 玉豆分享)_85
+  - 美国(yudou789.top 玉豆分享)_88
+  - 新加坡(yudou789.top 玉豆分享)
+  - 西班牙(yudou789.top 玉豆分享)
+  - 香港(yudou789.top 玉豆分享)_2
+  - 英国(yudou789.top 玉豆分享)_1
+  - 🇲🇩_MD_摩尔多瓦_2
+  - 🇭🇰_HK_中国香港_3
+  - 🇭🇰_HK_中国香港_1
+  - 🇩🇪_DE_德国_5
+  - 🇫🇷_FR_法国
+  - 🇩🇪_DE_德国_1_3
+  - 🇭🇰_HK_中国香港->🇩🇪_DE_德国
+  - 🇭🇰_HK_中国香港_2
+  - 🇨🇭_CH_瑞士
+  - 🇨🇭_CH_瑞士_1
+  - 🇩🇪_DE_德国_2_2
+  - 🇪🇸_ES_西班牙_4
+  - 🇺🇸_US_美国_1_3
+  - 🇩🇪_DE_德国_3_2
+  - 🇩🇪_DE_德国_4
+  - 🇳🇱_NL_荷兰_3
+  - 🇵🇱_PL_波兰_3
+  - 🇩🇪_DE_德国_5
+  - 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国_1
+  - 🇨🇳_CN_中国->🇭🇰_HK_中国香港_2
+  - 🇲🇰_MK_MK
+  - 🇵🇱_PL_波兰_1
+  - 🇲🇩_MD_摩尔多瓦_1
   - 分享日记_1
   - 分享日记_2
   - 分享日记_3
@@ -51445,151 +51238,69 @@ proxy-groups:
   - 分享日记_585
   - 分享日记_586
   - 🇭🇰HK香港丨yoyapai.com_5_2
-  - 未知_1
-  - 未知_2
-  - 🇰🇷_KR_韩国
-  - 🇩🇰_DK_丹麦->🇺🇸_US_美国
-  - 未知_3
-  - 未知_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1_2
-  - 未知_5
-  - 🇺🇸_US_美国_1_3
-  - 🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国_1_4
+  - 🇳🇱_NL_荷兰_4
+  - 🇨🇳_CN_中国->🇩🇪_DE_德国
   - 🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 未知_6
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
   - 🇺🇸_US_美国_3_2
-  - 🇵🇱_PL_波兰_1
-  - 🇺🇸_US_美国_1_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇵🇱_PL_波兰_2
-  - 🇵🇱_PL_波兰_3
-  - 🇵🇱_PL_波兰_4
-  - 🇺🇸_US_美国_2_2
-  - 🇵🇱_PL_波兰_5
-  - 🇺🇸_US_美国->🇫🇷_FR_法国_1
-  - 🇵🇱_PL_波兰_6
-  - 🇺🇸_US_美国_3_3
-  - 🇷🇺_RU_俄罗斯联邦
+  - 🇩🇪_DE_德国->🇺🇸_US_美国
+  - 🇬🇧_GB_英国->🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国->🇨🇳_CN_中国
   - 🇺🇸_US_美国_4_2
-  - 🇵🇱_PL_波兰_7
-  - 🇵🇱_PL_波兰_8
-  - 🇵🇱_PL_波兰_9
-  - 🇺🇸_US_美国->🇷🇺_RU_俄罗斯联邦
-  - 🇵🇱_PL_波兰_10
-  - 🇵🇱_PL_波兰_11
-  - 🇵🇱_PL_波兰_12
-  - 🇵🇱_PL_波兰_13
   - 🇺🇸_US_美国_5
-  - 🇵🇱_PL_波兰_14
-  - 🇺🇸_US_美国_6
-  - 🇮🇪_IE_爱尔兰
-  - 🇺🇸_US_美国->🇫🇷_FR_法国_2
-  - 🇵🇱_PL_波兰_15
-  - 🇵🇱_PL_波兰_16
-  - 🇺🇸_US_美国_7
-  - 🇺🇸_US_美国->🇫🇷_FR_法国_3
-  - 🇺🇸_US_美国_8
-  - 🇻🇳_VN_越南
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
-  - 🇧🇿_BZ_伯利兹
-  - 🇺🇸_US_美国_3
-  - 🇪🇸_ES_西班牙_4
-  - 🇻🇳_VN_越南_1
-  - 🇫🇮_FI_芬兰
-  - 🇯🇵_JP_日本->🇹🇼_TW_中国台湾
-  - 🇯🇵_JP_日本_2
-  - 🇬🇧_GB_英国
-  - 🇰🇷_KR_韩国_2
-  - 🇻🇳_VN_越南_2
-  - 🇯🇵_JP_日本->🇸🇬_SG_新加坡
-  - 🇻🇳_VN_越南_3
-  - 🇹🇭_TH_泰国
-  - 🇰🇷_KR_韩国_1
-  - 🇺🇸_US_美国_2_3
-  - 🇯🇵_JP_日本_1
-  - 🇺🇸_US_美国_3_4
-  - 🇭🇰_HK_中国香港_4
-  - 🇰🇿_KZ_哈萨克斯坦
-  - 🇺🇸_US_美国_4_3
-  - 🇺🇸_US_美国_5_2
-  - 🇺🇸_US_美国_6_2
-  - 🇻🇳_VN_越南_4
-  - 🇻🇳_VN_越南_5
-  - 🇨🇾_CY_塞浦路斯
-  - 🇷🇺_RU_俄罗斯_2
-  - 美国(yudou789.top 玉豆分享)
-  - 美国(yudou789.top 玉豆分享)_1
-  - 美国(yudou789.top 玉豆分享)_2
-  - 美国(yudou789.top 玉豆分享)_200
-  - 美国(yudou789.top 玉豆分享)_201
-  - 新加坡(yudou789.top 玉豆分享)
-  - 英国(yudou789.top 玉豆分享)
-  - 韩国(yudou789.top 玉豆分享)
-  - 英国(yudou789.top 玉豆分享)_1
-  - 香港(yudou789.top 玉豆分享)_1
-  - 美国(yudou789.top 玉豆分享)_2
-  - 美国(yudou789.top 玉豆分享)_14
-  - 美国(yudou789.top 玉豆分享)_17
-  - 美国(yudou789.top 玉豆分享)_20
-  - 美国(yudou789.top 玉豆分享)_23
-  - 美国(yudou789.top 玉豆分享)_25
+  - 荷兰(yudou789.top 玉豆分享)_2_2
+  - 美国(yudou789.top 玉豆分享)_27
   - 韩国(yudou789.top 玉豆分享)_2
-  - 美国(yudou789.top 玉豆分享)_45
-  - 美国(yudou789.top 玉豆分享)_47
-  - 美国(yudou789.top 玉豆分享)_54
-  - 德国(yudou789.top 玉豆分享)
-  - 荷兰(yudou789.top 玉豆分享)_2
-  - 美国(yudou789.top 玉豆分享)_57
-  - 美国(yudou789.top 玉豆分享)_60
-  - 德国(yudou789.top 玉豆分享)_1
-  - 美国(yudou789.top 玉豆分享)_62
-  - 美国(yudou789.top 玉豆分享)_63
-  - 美国(yudou789.top 玉豆分享)_64
-  - 香港(yudou789.top 玉豆分享)_1_2
-  - 美国(yudou789.top 玉豆分享)_68
-  - 美国(yudou789.top 玉豆分享)_69
-  - 美国(yudou789.top 玉豆分享)_74
-  - 美国(yudou789.top 玉豆分享)_75
-  - 美国(yudou789.top 玉豆分享)_77
-  - 美国(yudou789.top 玉豆分享)_80
-  - 美国(yudou789.top 玉豆分享)_82
-  - 美国(yudou789.top 玉豆分享)_83
-  - 俄罗斯(yudou789.top 玉豆分享)_5
-  - 美国(yudou789.top 玉豆分享)_85
-  - 美国(yudou789.top 玉豆分享)_88
   - 新加坡(yudou789.top 玉豆分享)_2
-  - 西班牙(yudou789.top 玉豆分享)
+  - 美国(yudou789.top 玉豆分享)_1
+  - 俄罗斯(yudou789.top 玉豆分享)
+  - 美国(yudou789.top 玉豆分享)_13
+  - 美国(yudou789.top 玉豆分享)_14_2
+  - 美国(yudou789.top 玉豆分享)_16
+  - 美国(yudou789.top 玉豆分享)_20_2
+  - 荷兰(yudou789.top 玉豆分享)_2_3
+  - 意大利(yudou789.top 玉豆分享)
+  - 香港(yudou789.top 玉豆分享)_1_2
+  - 俄罗斯(yudou789.top 玉豆分享)_5_2
+  - 美国(yudou789.top 玉豆分享)_36
+  - 俄罗斯(yudou789.top 玉豆分享)_10
+  - 美国(yudou789.top 玉豆分享)_37
+  - 美国(yudou789.top 玉豆分享)_39
+  - 俄罗斯(yudou789.top 玉豆分享)_17
+  - 美国(yudou789.top 玉豆分享)_42
   type: url-test
   url: http://www.gstatic.com/generate_204
 - name: 🌍 手动选择
   proxies:
   - 🚀 自动选择
-  - 🇨🇳_CN_中国
+  - 🇭🇰_HK_中国香港->🇯🇵_JP_日本
+  - 🇪🇸_ES_西班牙
   - 🇩🇪_DE_德国
+  - 🇵🇱_PL_波兰
   - 🇭🇰_HK_中国香港
   - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇺🇸_US_美国
-  - 🇩🇪_DE_德国_1
-  - 🇪🇸_ES_西班牙
-  - 🇩🇪_DE_德国_2
-  - 🇵🇱_PL_波兰
-  - 🇭🇰_HK_中国香港_2
   - 🇭🇰_HK_中国香港->🇺🇸_US_美国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇭🇰_HK_中国香港->🇫🇷_FR_法国
+  - 🇩🇪_DE_德国_1
+  - 🇨🇳_CN_中国
   - 🇨🇳_CN_中国->🇰🇷_KR_韩国
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港
   - 🇩🇪_DE_德国->🇳🇱_NL_荷兰
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港_1
-  - 🇩🇪_DE_德国_3
+  - 🇩🇪_DE_德国_2
   - 🇪🇸_ES_西班牙_2
   - 🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港_2
   - 🇳🇱_NL_荷兰
   - 🇺🇸_US_美国->🇯🇵_JP_日本
   - 🇺🇸_US_美国->🇭🇰_HK_中国香港
+  - 🇩🇪_DE_德国_3
+  - 🇳🇱_NL_荷兰_2
+  - 🇯🇵_JP_日本
+  - 🇯🇵_JP_日本_1
   - 🇺🇸美國丨yoyapai.com
   - 🇺🇸US美国丨yoyapai.com
   - 🇩🇪DE德国丨yoyapai.com
@@ -52631,10 +52342,10 @@ proxy-groups:
   - 🇵🇱_PL_波兰_2
   - 🇺🇸_US_美国_3
   - 🇦🇺_AU_澳大利亚->🇫🇮_FI_芬兰
-  - 🇯🇵_JP_日本
+  - 🇯🇵_JP_日本_2
   - 🇹🇷_TR_土耳其->🇳🇱_NL_荷兰
   - 🇺🇸_US_美国_4
-  - 🇭🇰_HK_中国香港_3
+  - 🇭🇰_HK_中国香港_2
   - 🇲🇩_MD_摩尔多瓦
   - US美国(mibei77.com 米贝节点分享)_3_2
   - GB英国(mibei77.com 米贝节点分享)_2
@@ -53871,30 +53582,19 @@ proxy-groups:
   - 🇺🇸US_659|1.9MB/s|R002-260618 01
   - 🇲🇽MX_5|336KB/s|R002-260618 01
   - 🇫🇷FR_1863|3.4MB/s|V008-260618 01
-  - 8元老牌专线机场：cczzuu.top
-  - 🇭🇰 香港_XGR6BO
-  - 🇧🇬 保加利亚_T210CG
-  - 🇩🇪 德国_77LFIF
-  - 🇩🇪 德国_DFK239
-  - 🇳🇱 荷兰_5G0CKQ
-  - 🇲🇩 摩尔多瓦_W0G4C7
-  - 🇩🇪 德国_M96M2D
-  - 🇪🇪 爱沙尼亚_MW9QP4
-  - 🇺🇦 乌克兰_B1SRD6
-  - 🇨🇭 瑞士_2MK4C9
-  - 🇨🇭 瑞士_U03VTC
-  - 🇷🇸 塞尔维亚_IH9NFZ
-  - 🇭🇰 香港_L8TA4Q
-  - 🇳🇱 荷兰_Y9K6JB
-  - 🇰🇿 哈萨克斯坦_CAV7VU
-  - 🇳🇱 荷兰_33NSPK
+  - 🇭🇰 香港_MOIH09
+  - 🇭🇰 香港_5HWLCA
+  - 🇧🇬 保加利亚_6HU8B8
   - 🇮🇳 印度_DHFIR7
   - 🇧🇬 保加利亚_LTKV4B
   - 🇩🇪 德国_RG1L53
   - 🇷🇸 塞尔维亚_YG60JZ
   - 🇷🇸 塞尔维亚_QXA7IT
+  - 🇷🇸 塞尔维亚_JIA2L9
   - 🇨🇭 瑞士_6MD7MV
   - 🇷🇸 塞尔维亚_ZR66VP
+  - 🇰🇿 哈萨克斯坦_0ILNZV
+  - 🇲🇩 摩尔多瓦_A9Q3KC
   - 🇩🇪 德国_40QYVD
   - 🇪🇸 西班牙_DT6G96
   - 🇩🇪 德国_9T54T1
@@ -53905,6 +53605,8 @@ proxy-groups:
   - 🇸🇪 瑞典_5MB6M2
   - 🇪🇸 西班牙_869ONZ
   - 🇷🇺 俄罗斯_Q19OLV
+  - 🇫🇮 芬兰_B64TVL
+  - 🇳🇱 荷兰_A8TU1P
   - tg频道:@freenodedaily
   - 🇭🇰 香港3
   - 🇭🇰 香港2
@@ -53918,6 +53620,63 @@ proxy-groups:
   - 🇰🇷 韩国
   - 🇺🇸 美国
   - 🇺🇸 美国2
+  - 美国(yudou789.top 玉豆分享)
+  - 美国(yudou789.top 玉豆分享)_14
+  - 美国(yudou789.top 玉豆分享)_17
+  - 美国(yudou789.top 玉豆分享)_20
+  - 美国(yudou789.top 玉豆分享)_23
+  - 美国(yudou789.top 玉豆分享)_25
+  - 韩国(yudou789.top 玉豆分享)
+  - 美国(yudou789.top 玉豆分享)_45
+  - 美国(yudou789.top 玉豆分享)_47
+  - 美国(yudou789.top 玉豆分享)_54
+  - 德国(yudou789.top 玉豆分享)
+  - 荷兰(yudou789.top 玉豆分享)_2
+  - 美国(yudou789.top 玉豆分享)_57
+  - 美国(yudou789.top 玉豆分享)_60
+  - 德国(yudou789.top 玉豆分享)_1
+  - 美国(yudou789.top 玉豆分享)_62
+  - 美国(yudou789.top 玉豆分享)_63
+  - 美国(yudou789.top 玉豆分享)_64
+  - 香港(yudou789.top 玉豆分享)_1
+  - 美国(yudou789.top 玉豆分享)_68
+  - 美国(yudou789.top 玉豆分享)_69
+  - 美国(yudou789.top 玉豆分享)_74
+  - 美国(yudou789.top 玉豆分享)_75
+  - 美国(yudou789.top 玉豆分享)_77
+  - 美国(yudou789.top 玉豆分享)_80
+  - 美国(yudou789.top 玉豆分享)_82
+  - 美国(yudou789.top 玉豆分享)_83
+  - 俄罗斯(yudou789.top 玉豆分享)_5
+  - 美国(yudou789.top 玉豆分享)_85
+  - 美国(yudou789.top 玉豆分享)_88
+  - 新加坡(yudou789.top 玉豆分享)
+  - 西班牙(yudou789.top 玉豆分享)
+  - 香港(yudou789.top 玉豆分享)_2
+  - 英国(yudou789.top 玉豆分享)_1
+  - 🇲🇩_MD_摩尔多瓦_2
+  - 🇭🇰_HK_中国香港_3
+  - 🇭🇰_HK_中国香港_1
+  - 🇩🇪_DE_德国_5
+  - 🇫🇷_FR_法国
+  - 🇩🇪_DE_德国_1_3
+  - 🇭🇰_HK_中国香港->🇩🇪_DE_德国
+  - 🇭🇰_HK_中国香港_2
+  - 🇨🇭_CH_瑞士
+  - 🇨🇭_CH_瑞士_1
+  - 🇩🇪_DE_德国_2_2
+  - 🇪🇸_ES_西班牙_4
+  - 🇺🇸_US_美国_1_3
+  - 🇩🇪_DE_德国_3_2
+  - 🇩🇪_DE_德国_4
+  - 🇳🇱_NL_荷兰_3
+  - 🇵🇱_PL_波兰_3
+  - 🇩🇪_DE_德国_5
+  - 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国_1
+  - 🇨🇳_CN_中国->🇭🇰_HK_中国香港_2
+  - 🇲🇰_MK_MK
+  - 🇵🇱_PL_波兰_1
+  - 🇲🇩_MD_摩尔多瓦_1
   - 分享日记_1
   - 分享日记_2
   - 分享日记_3
@@ -55015,122 +54774,37 @@ proxy-groups:
   - 分享日记_585
   - 分享日记_586
   - 🇭🇰HK香港丨yoyapai.com_5_2
-  - 未知_1
-  - 未知_2
-  - 🇰🇷_KR_韩国
-  - 🇩🇰_DK_丹麦->🇺🇸_US_美国
-  - 未知_3
-  - 未知_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1_2
-  - 未知_5
-  - 🇺🇸_US_美国_1_3
-  - 🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国_1_4
+  - 🇳🇱_NL_荷兰_4
+  - 🇨🇳_CN_中国->🇩🇪_DE_德国
   - 🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 未知_6
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
   - 🇺🇸_US_美国_3_2
-  - 🇵🇱_PL_波兰_1
-  - 🇺🇸_US_美国_1_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇵🇱_PL_波兰_2
-  - 🇵🇱_PL_波兰_3
-  - 🇵🇱_PL_波兰_4
-  - 🇺🇸_US_美国_2_2
-  - 🇵🇱_PL_波兰_5
-  - 🇺🇸_US_美国->🇫🇷_FR_法国_1
-  - 🇵🇱_PL_波兰_6
-  - 🇺🇸_US_美国_3_3
-  - 🇷🇺_RU_俄罗斯联邦
+  - 🇩🇪_DE_德国->🇺🇸_US_美国
+  - 🇬🇧_GB_英国->🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国->🇨🇳_CN_中国
   - 🇺🇸_US_美国_4_2
-  - 🇵🇱_PL_波兰_7
-  - 🇵🇱_PL_波兰_8
-  - 🇵🇱_PL_波兰_9
-  - 🇺🇸_US_美国->🇷🇺_RU_俄罗斯联邦
-  - 🇵🇱_PL_波兰_10
-  - 🇵🇱_PL_波兰_11
-  - 🇵🇱_PL_波兰_12
-  - 🇵🇱_PL_波兰_13
   - 🇺🇸_US_美国_5
-  - 🇵🇱_PL_波兰_14
-  - 🇺🇸_US_美国_6
-  - 🇮🇪_IE_爱尔兰
-  - 🇺🇸_US_美国->🇫🇷_FR_法国_2
-  - 🇵🇱_PL_波兰_15
-  - 🇵🇱_PL_波兰_16
-  - 🇺🇸_US_美国_7
-  - 🇺🇸_US_美国->🇫🇷_FR_法国_3
-  - 🇺🇸_US_美国_8
-  - 🇻🇳_VN_越南
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
-  - 🇧🇿_BZ_伯利兹
-  - 🇺🇸_US_美国_3
-  - 🇪🇸_ES_西班牙_4
-  - 🇻🇳_VN_越南_1
-  - 🇫🇮_FI_芬兰
-  - 🇯🇵_JP_日本->🇹🇼_TW_中国台湾
-  - 🇯🇵_JP_日本_2
-  - 🇬🇧_GB_英国
-  - 🇰🇷_KR_韩国_2
-  - 🇻🇳_VN_越南_2
-  - 🇯🇵_JP_日本->🇸🇬_SG_新加坡
-  - 🇻🇳_VN_越南_3
-  - 🇹🇭_TH_泰国
-  - 🇰🇷_KR_韩国_1
-  - 🇺🇸_US_美国_2_3
-  - 🇯🇵_JP_日本_1
-  - 🇺🇸_US_美国_3_4
-  - 🇭🇰_HK_中国香港_4
-  - 🇰🇿_KZ_哈萨克斯坦
-  - 🇺🇸_US_美国_4_3
-  - 🇺🇸_US_美国_5_2
-  - 🇺🇸_US_美国_6_2
-  - 🇻🇳_VN_越南_4
-  - 🇻🇳_VN_越南_5
-  - 🇨🇾_CY_塞浦路斯
-  - 🇷🇺_RU_俄罗斯_2
-  - 美国(yudou789.top 玉豆分享)
-  - 美国(yudou789.top 玉豆分享)_1
-  - 美国(yudou789.top 玉豆分享)_2
-  - 美国(yudou789.top 玉豆分享)_200
-  - 美国(yudou789.top 玉豆分享)_201
-  - 新加坡(yudou789.top 玉豆分享)
-  - 英国(yudou789.top 玉豆分享)
-  - 韩国(yudou789.top 玉豆分享)
-  - 英国(yudou789.top 玉豆分享)_1
-  - 香港(yudou789.top 玉豆分享)_1
-  - 美国(yudou789.top 玉豆分享)_2
-  - 美国(yudou789.top 玉豆分享)_14
-  - 美国(yudou789.top 玉豆分享)_17
-  - 美国(yudou789.top 玉豆分享)_20
-  - 美国(yudou789.top 玉豆分享)_23
-  - 美国(yudou789.top 玉豆分享)_25
+  - 荷兰(yudou789.top 玉豆分享)_2_2
+  - 美国(yudou789.top 玉豆分享)_27
   - 韩国(yudou789.top 玉豆分享)_2
-  - 美国(yudou789.top 玉豆分享)_45
-  - 美国(yudou789.top 玉豆分享)_47
-  - 美国(yudou789.top 玉豆分享)_54
-  - 德国(yudou789.top 玉豆分享)
-  - 荷兰(yudou789.top 玉豆分享)_2
-  - 美国(yudou789.top 玉豆分享)_57
-  - 美国(yudou789.top 玉豆分享)_60
-  - 德国(yudou789.top 玉豆分享)_1
-  - 美国(yudou789.top 玉豆分享)_62
-  - 美国(yudou789.top 玉豆分享)_63
-  - 美国(yudou789.top 玉豆分享)_64
-  - 香港(yudou789.top 玉豆分享)_1_2
-  - 美国(yudou789.top 玉豆分享)_68
-  - 美国(yudou789.top 玉豆分享)_69
-  - 美国(yudou789.top 玉豆分享)_74
-  - 美国(yudou789.top 玉豆分享)_75
-  - 美国(yudou789.top 玉豆分享)_77
-  - 美国(yudou789.top 玉豆分享)_80
-  - 美国(yudou789.top 玉豆分享)_82
-  - 美国(yudou789.top 玉豆分享)_83
-  - 俄罗斯(yudou789.top 玉豆分享)_5
-  - 美国(yudou789.top 玉豆分享)_85
-  - 美国(yudou789.top 玉豆分享)_88
   - 新加坡(yudou789.top 玉豆分享)_2
-  - 西班牙(yudou789.top 玉豆分享)
+  - 美国(yudou789.top 玉豆分享)_1
+  - 俄罗斯(yudou789.top 玉豆分享)
+  - 美国(yudou789.top 玉豆分享)_13
+  - 美国(yudou789.top 玉豆分享)_14_2
+  - 美国(yudou789.top 玉豆分享)_16
+  - 美国(yudou789.top 玉豆分享)_20_2
+  - 荷兰(yudou789.top 玉豆分享)_2_3
+  - 意大利(yudou789.top 玉豆分享)
+  - 香港(yudou789.top 玉豆分享)_1_2
+  - 俄罗斯(yudou789.top 玉豆分享)_5_2
+  - 美国(yudou789.top 玉豆分享)_36
+  - 俄罗斯(yudou789.top 玉豆分享)_10
+  - 美国(yudou789.top 玉豆分享)_37
+  - 美国(yudou789.top 玉豆分享)_39
+  - 俄罗斯(yudou789.top 玉豆分享)_17
+  - 美国(yudou789.top 玉豆分享)_42
   type: select
 rules:
 - MATCH,🌍 手动选择

@@ -19,7 +19,7 @@ def build_readme(config: Config) -> str:
     lines = [
         "# FreeNodes",
         "",
-        "v2ray、Clash 免费节点爬虫（AI 版），每日 UTC 04:00（北京时间 12:00）自动运行。",
+        "v2ray、Clash 免费节点爬虫（AI 版），每日 UTC 04:17（北京时间 12:17）自动运行。",
         "",
         "## 免责声明",
         "",
